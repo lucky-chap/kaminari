@@ -1,8 +1,9 @@
-import { Inter } from "@next/font/google"
-import "./globals.css"
+import "@/styles/globals.css"
+import { Archivo } from "@next/font/google"
+import React from "react"
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
 })
 
@@ -18,7 +19,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${inter.className} --font-inter`}>{children}</body>
+      <body className={`${archivo.className} --font-archivo`}>{children}</body>
     </html>
   )
 }

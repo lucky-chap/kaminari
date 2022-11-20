@@ -26,6 +26,7 @@
     }
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.0.4",
     "@tailwindcss/forms": "^0.5.3",
@@ -44,8 +45,15 @@
     "@commitlint/config-conventional": "^17.2.0",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "autoprefixer": "^10.4.13",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.5.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-sonarjs": "^0.16.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.19",

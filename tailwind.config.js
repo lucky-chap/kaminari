@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require("tailwindcss/colors")
 
@@ -28,6 +31,7 @@ module.exports = {
       },
       fontFamily: {
         sans: "var(--font-inter)",
+        archivo: "var(--font-archivo)",
       },
       backgroundImage: ({ theme }) => ({
         "vc-border-gradient": `radial-gradient(at left top, ${theme(
@@ -37,10 +41,10 @@ module.exports = {
       keyframes: ({ theme }) => ({
         rerender: {
           "0%": {
-            ["border-color"]: theme("colors.vercel.pink"),
+            "border-color": theme("colors.vercel.pink"),
           },
           "40%": {
-            ["border-color"]: theme("colors.vercel.pink"),
+            "border-color": theme("colors.vercel.pink"),
           },
         },
         highlight: {

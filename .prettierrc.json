@@ -2,5 +2,7 @@
   "arrowParens": "always",
   "semi": false,
   "trailingComma": "all",
-  "singleQuote": false
+  "singleQuote": false,
+  "bracketSpacing": true,
+  "endOfLine": "auto"
 }
