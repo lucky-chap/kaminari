@@ -46,6 +46,8 @@
       }
     ],
     "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "warn",
+    "react/no-unused-prop-types": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
