@@ -7,6 +7,14 @@
       "jsx": true
     }
   },
+  "overrides": [
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -31,10 +39,11 @@
     "plugin:sonarjs/recommended",
     "plugin:security/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
     "airbnb",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "cypress"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-explicit-any": "off",
@@ -68,6 +77,9 @@
     ],
     "no-nested-ternary": "off",
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-undef": "warn",
+    "no-unused-vars": "warn",
     "no-dupe-keys": "error",
     "react/button-has-type": "off"
   }

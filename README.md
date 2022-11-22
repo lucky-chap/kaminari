@@ -62,3 +62,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Made with ♥ by [Quavo](https://twitter.com/hunchodotdev)
+
+## 🔗 Important Links
+
+- [Custom Cypress Config](https://github.com/cypress-io/cypress/issues/22059#issuecomment-1178574704)
