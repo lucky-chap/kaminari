@@ -12,8 +12,7 @@
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
     "lint:multi": "yarn prettier:check && yarn lint",
-    "prepare": "husky install",
-    "postbuild": "next-sitemap"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.(ts|tsx|js)": [
@@ -41,7 +40,6 @@
     "eslint-config-next": "13.0.4",
     "lucide-react": "^0.102.0",
     "next": "13.0.4",
-    "next-sitemap": "^3.1.32",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.8.0",
