@@ -5,9 +5,9 @@
 
 "use client"
 
-import { Icons } from "@/components/icons"
-import { MobileNav } from "@/components/mobile-nav"
 import { cn } from "@/lib/utils"
+import { Icons } from "@/ui/components/icons"
+import { MobileNav } from "@/ui/components/mobile-nav"
 import Link from "next/link"
 import { useSelectedLayoutSegment } from "next/navigation"
 import React, { useEffect, useState } from "react"
@@ -53,7 +53,7 @@ export default function Header({ items, children }: MainNavProps) {
                   rel={item.isExternal ? "noreferrer" : undefined}
                   href={item.disabled ? "#" : item.href}
                   className={cn(
-                    "flex items-center text-lg font-semibold text-[#a5a5a5] sm:text-sm",
+                    "flex items-center text-lg font-semibold text-gray-one sm:text-sm",
                     item.href.startsWith(`/${segment}`) && "text-white",
                     item.disabled && "cursor-not-allowed opacity-80",
                   )}

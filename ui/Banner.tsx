@@ -21,7 +21,7 @@ export default function Banner() {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="hover:bg-brand-400 focus:ring-brand-500 mt- relative inline-flex h-8 w-full items-center justify-center rounded-md border border-transparent bg-white px-10 py-5 text-sm font-bold text-[#0D0D0D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
+            <button className="hover:bg-brand-400 focus:ring-brand-500 mt- relative inline-flex h-8 w-full items-center justify-center rounded-md border border-transparent bg-white px-10 py-5 text-sm font-bold text-gray-1000 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:w-auto">
               Fork Code
             </button>
           </a>
