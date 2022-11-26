@@ -24,9 +24,14 @@ export default function Home() {
           <span>About</span> <span className="mt-1 inline-block">Kaminari</span>
         </h2>
         <p className="font-semibold">
-          <span className="font-bold italic ">Kaminari</span> means{" "}
-          <span className="font-bold italic">lightning</span> in Japanese. This
-          template is built with simplicity and speed in mind
+          <span className="p-1 font-bold italic text-white underline underline-offset-4">
+            Kaminari
+          </span>{" "}
+          means{" "}
+          <span className="p-1 font-bold italic text-white underline underline-offset-4">
+            lightning
+          </span>{" "}
+          in Japanese. This template is built with simplicity and speed in mind.
         </p>
         <p className="pb-4 font-semibold">
           Clone Kaminari now and get up to speed with your new project
