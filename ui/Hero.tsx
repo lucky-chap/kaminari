@@ -40,10 +40,7 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
           >
-            <button
-              disabled
-              className="hover:bg-brand-400 focus:ring-brand-500 mt- relative inline-flex h-8 cursor-pointer items-center rounded-md border border-transparent px-10 py-5 text-sm font-bold text-white transition-colors duration-150 ease-linear hover:text-brand-main focus:outline-none"
-            >
+            <button className="hover:bg-brand-400 focus:ring-brand-500 mt- relative inline-flex h-8 cursor-pointer items-center rounded-md border border-transparent px-10 py-5 text-sm font-bold text-white transition-colors duration-150 ease-linear hover:text-brand-main focus:outline-none">
               Star on GitHub
               <svg
                 xmlns="http://www.w3.org/2000/svg"
