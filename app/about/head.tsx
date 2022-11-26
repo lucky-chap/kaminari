@@ -1,5 +1,5 @@
 import Seo from "@/ui/Seo"
 
 export default function Head() {
-  return <Seo title="About" description="" />
+  return <Seo title="About" description="Learn more about Kaminari" />
 }

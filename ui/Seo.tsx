@@ -22,10 +22,7 @@ export default function Seo({ title, description }: IMetaProps) {
         property="og:description"
         content={description ?? siteConfig.description}
       />
-      <meta
-        property="og:image"
-        content={`${siteConfig.url}/assets/site-banner.png`}
-      />
+      <meta property="og:image" content={`${siteConfig.url}/site-banner.png`} />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={siteConfig.url} />
@@ -36,7 +33,7 @@ export default function Seo({ title, description }: IMetaProps) {
       />
       <meta
         property="twitter:image"
-        content={`${siteConfig.url}/assets/site-banner.png`}
+        content={`${siteConfig.url}/site-banner.png`}
       />
 
       <link rel="icon" href="/favicon.ico" />
