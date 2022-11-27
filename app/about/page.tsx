@@ -1,20 +1,5 @@
-"use client"
-
 import Image from "next/image"
-import { NavItem } from "types"
-
-const navItems: NavItem[] = [
-  {
-    title: "About",
-    isExternal: false,
-    href: "/about",
-  },
-  {
-    title: "Source Code",
-    isExternal: true,
-    href: "https://github.com/lucky-chap/kaminari",
-  },
-]
+import siteBanner from "../../public/site-banner-white.png"
 
 export default function Home() {
   return (
@@ -45,13 +30,7 @@ export default function Home() {
             Use Template
           </button>
         </a>
-        <Image
-          src="/site-banner-white.png"
-          width={1000}
-          height={100}
-          alt="banner"
-          className="mx-auto rounded"
-        />
+        <Image src={siteBanner} alt="banner" className="mx-auto rounded" />
       </div>
     </section>
   )

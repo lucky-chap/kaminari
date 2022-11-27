@@ -1,4 +1,6 @@
 import Image from "next/image"
+import githubImage from "../public/assets/github.png"
+import rocketImage from "../public/rocket.webp"
 
 export default function Hero() {
   return (
@@ -6,7 +8,7 @@ export default function Hero() {
       <div className="px-2 pt-20">
         {/* badge */}
         <div className="mx-auto flex max-w-[15rem] items-center justify-around rounded-3xl border border-gray-1002 bg-gray-1001 p-2 text-center text-white">
-          <Image src="/rocket.webp" width={20} height={20} alt="rocket" />
+          <Image src={rocketImage} width={20} height={20} alt="rocket" />
           <p className="text-sm font-bold">#1 Next.js Starter Template</p>
         </div>
         {/* text */}
@@ -26,7 +28,7 @@ export default function Hero() {
           >
             <button className="relative inline-flex h-8 items-center rounded-md border border-transparent bg-white px-5 py-5 text-sm font-bold text-gray-1000 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 sm:px-10">
               <Image
-                src="/assets/github.png"
+                src={githubImage}
                 className="mr-2"
                 width={20}
                 height={20}
