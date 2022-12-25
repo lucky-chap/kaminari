@@ -13,6 +13,8 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { NavItem } from "types"
 
+import { FiCommand } from "react-icons/fi"
+
 interface MainNavProps {
   items: NavItem[]
   children?: React.ReactNode
@@ -73,17 +75,23 @@ export default function Header({ items, children }: MainNavProps) {
               </Link>
             ))}
           </nav>
-          <nav>
+          {/* <nav>
             <iframe
               src="https://ghbtns.com/github-btn.html?user=lucky-chap&repo=kaminari&type=star&count=true&size=large"
               frameBorder="0"
               scrolling="0"
-              width="170"
-              height="30"
+              width="150"
+              height="20"
               title="GitHub"
               className="flex justify-end"
             />
-          </nav>
+          </nav> */}
+          <button
+            onClick={() => console.log("Lucifer")}
+            className="group rounded bg-gray-1000 p-2 transition-colors duration-100 ease-linear hover:bg-gray-1001"
+          >
+            <FiCommand className="text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-100" />
+          </button>
         </div>
         {showMobileMenu && <MobileNav items={items}>{children}</MobileNav>}
       </div>

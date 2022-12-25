@@ -1,9 +1,13 @@
+"use client"
+
 import "@/styles/globals.css"
 import { Footer } from "@/ui/Footer"
 import Header from "@/ui/Header"
 import { Inter } from "@next/font/google"
 import React from "react"
 import { NavItem } from "types"
+
+// import Palette from "@/ui/components/Palette"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,11 +29,11 @@ const navItems: NavItem[] = [
     isExternal: false,
     href: "/projects",
   },
-  {
-    title: "Source Code",
-    isExternal: true,
-    href: "https://github.com/lucky-chap/kaminari",
-  },
+  // {
+  //   title: "Source Code",
+  //   isExternal: true,
+  //   href: "https://github.com/lucky-chap/kaminari",
+  // },
 ]
 
 export default function AboutLayout({
@@ -46,6 +50,7 @@ export default function AboutLayout({
       <head />
       <body className="min-h-screen flex-col bg-black font-inter text-white">
         <Header items={navItems} />
+        {/* <Palette /> */}
         {children}
         <Footer />
       </body>

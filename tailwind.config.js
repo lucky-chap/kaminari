@@ -26,7 +26,7 @@ module.exports = {
           one: "#a5a5a5",
         },
         brand: {
-          main: "#fdffa8",
+          main: "#fff",
         },
       },
       fontFamily: {
