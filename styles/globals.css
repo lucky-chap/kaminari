@@ -8,3 +8,7 @@ body {
   font-family: "Inter", sans-serif;
   font-family: "Space Grotesk", sans-serif;
 }
+
+.grayscale-alt {
+  filter: grayscale(0);
+}

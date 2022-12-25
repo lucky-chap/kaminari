@@ -32,7 +32,7 @@ A Next.js starter that includes all you need to build amazing projects 🔥. For
 The best way to start with this template is using `create-next-app`.
 
 ```
-npx create-next-app ts-next -e https://github.com/lucky-chap/kaminari
+npx create-next-app my-app -e https://github.com/lucky-chap/kaminari
 ```
 
 If you prefer you can clone this repository and run the following commands inside the project folder:

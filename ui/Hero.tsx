@@ -1,25 +1,18 @@
 import Image from "next/image"
-// import gradientBG from "../public/assets/gradient.png"
+import gradientBG from "../public/assets/gradient.png"
 import rocketImage from "../public/rocket.webp"
 
 export default function Hero() {
   return (
-    <section className="container mx-auto text-center">
+    <section className="container relative mx-auto text-center">
       <div className="relative overflow-hidden px-2 pt-20">
-        {/* <Image
-          className="fixed -top-[20rem] left-[0rem] md:left-[10rem] md:-top-[50rem] lg:-top-[50rem] lg:left-[10rem]"
+        <Image
+          className="absolute -top-[10rem] left-[0rem] -z-10 sm:-top-[25rem] md:left-[0rem] md:-top-[30rem] lg:-top-[50rem] lg:left-[15rem]"
           src={gradientBG}
           alt="gradient"
           height={300}
           width={1400}
-        /> */}
-        {/* <Image
-          className="absolute -top-[300px] -z-10 translate-y-[40%] translate-x-[0%] overflow-hidden blur sm:-top-[450px] md:-top-[950px] md:translate-x-[10%] md:translate-y-[55%] lg:-top-[1000px] lg:translate-y-[20%] lg:translate-x-[15%]"
-          src={gradientBG}
-          alt="gradient"
-          height={300}
-          width={1200}
-        /> */}
+        />
         {/* badge */}
         <div className="mx-auto flex max-w-[15rem] cursor-pointer items-center justify-around rounded-3xl bg-gray-100 p-2 text-center text-black transition-all duration-100 ease-linear hover:bg-gray-200">
           <Image src={rocketImage} width={20} height={20} alt="rocket" />
