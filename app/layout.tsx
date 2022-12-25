@@ -1,20 +1,29 @@
 import "@/styles/globals.css"
-import { SiteFooter } from "@/ui/Footer"
+import { Footer } from "@/ui/Footer"
 import Header from "@/ui/Header"
-import { Archivo } from "@next/font/google"
+import { Inter } from "@next/font/google"
 import React from "react"
 import { NavItem } from "types"
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-inter",
 })
 
 const navItems: NavItem[] = [
   {
+    title: "Blog",
+    isExternal: false,
+    href: "/blog",
+  },
+  {
     title: "About",
     isExternal: false,
     href: "/about",
+  },
+  {
+    title: "Projects",
+    isExternal: false,
+    href: "/projects",
   },
   {
     title: "Source Code",
@@ -35,12 +44,10 @@ export default function AboutLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body
-        className={`${archivo.className} --font-archivo min-h-screen flex-col bg-black text-white`}
-      >
+      <body className="min-h-screen flex-col bg-black font-inter text-white">
         <Header items={navItems} />
         {children}
-        <SiteFooter />
+        <Footer />
       </body>
     </html>
   )

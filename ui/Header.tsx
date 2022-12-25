@@ -33,35 +33,19 @@ export default function Header({ items, children }: MainNavProps) {
   }, [top])
   return (
     <header
-      className={`sticky top-0 z-40 ${
+      className={`sticky top-0 z-40 border-b border-zinc-900 ${
         !top && "bg-transparent shadow-lg backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto">
-        <div className="flex h-16 items-center justify-between py-4 px-2">
-          <div className="flex gap-6 md:gap-10">
+      <div className="mx-auto max-w-5xl">
+        <div className="flex h-12 items-center justify-between py-2 px-2">
+          <div className="flex justify-between gap-6 md:gap-10">
             <Link className="hidden items-center space-x-2 md:flex" href="/">
               <Icons.logo />
 
               <span className="hidden font-bold sm:inline-block">Kaminari</span>
             </Link>
-            <nav className="hidden gap-6 md:flex">
-              {items.map((item: NavItem, index: number) => (
-                <Link
-                  key={index}
-                  target={item.isExternal ? "_blank" : "_self"}
-                  rel={item.isExternal ? "noreferrer" : undefined}
-                  href={item.disabled ? "#" : item.href}
-                  className={cn(
-                    "flex items-center text-lg font-semibold text-gray-one sm:text-sm",
-                    item.href.startsWith(`/${segment}`) && "text-white",
-                    item.disabled && "cursor-not-allowed opacity-80",
-                  )}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </nav>
+
             <button
               className="flex items-center space-x-2 md:hidden"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -72,6 +56,23 @@ export default function Header({ items, children }: MainNavProps) {
               </span>
             </button>
           </div>
+          <nav className="hidden gap-6 md:flex">
+            {items.map((item: NavItem, index: number) => (
+              <Link
+                key={index}
+                target={item.isExternal ? "_blank" : "_self"}
+                rel={item.isExternal ? "noreferrer" : undefined}
+                href={item.disabled ? "#" : item.href}
+                className={cn(
+                  "font- flex items-center text-sm font-medium text-[#888] transition-all duration-75 ease-linear hover:text-zinc-50",
+                  item.href.startsWith(`/${segment}`) && "text-white",
+                  item.disabled && "cursor-not-allowed opacity-80",
+                )}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
           <nav>
             <iframe
               src="https://ghbtns.com/github-btn.html?user=lucky-chap&repo=kaminari&type=star&count=true&size=large"

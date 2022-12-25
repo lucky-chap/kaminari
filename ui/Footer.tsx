@@ -1,41 +1,20 @@
-export function SiteFooter() {
+import Image from "next/image"
+import userLogo from "../public/assets/user.jpg"
+
+export function Footer() {
   return (
-    <footer className="container mx-auto mt-auto text-gray-one">
-      <div className="flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-        <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-          <p className="text-center text-sm leading-loose md:text-left">
-            Built by{" "}
-            <a
-              href="https://quavo.vercel.app"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              quavo
-            </a>
-            . Hosted on{" "}
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Vercel
-            </a>
-            .
-          </p>
-        </div>
-        <p className="text-center text-sm md:text-left">
-          Fork it off on{" "}
-          <a
-            href="https://github.com/lucky-chap/nextjs-starter-template/fork"
-            target="_blank"
-            rel="noreferrer"
-            className="font-medium underline underline-offset-4"
-          >
-            GitHub
-          </a>
-          .
+    <footer className="mx-auto mt-auto max-w-4xl text-gray-one">
+      <div className="flex items-center justify-center">
+        <p className="flex items-center text-xs">
+          Created by
+          <span className="inline-block px-1 font-bold text-white">Heylel</span>
+          <span>
+            <Image
+              className="ml-1 h-6 w-6 rounded-full"
+              src={userLogo}
+              alt="creator"
+            />{" "}
+          </span>
         </p>
       </div>
     </footer>

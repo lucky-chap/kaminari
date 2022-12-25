@@ -30,8 +30,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: "var(--font-inter)",
-        archivo: "var(--font-archivo)",
+        inter: "Inter",
+        grotesk: "Space Grotesk",
       },
       backgroundImage: ({ theme }) => ({
         "vc-border-gradient": `radial-gradient(at left top, ${theme(

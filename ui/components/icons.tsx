@@ -9,7 +9,7 @@ function Logo() {
       width="188"
       height="179"
       viewBox="0 0 188 179"
-      className="h-9 w-9"
+      className="h-6 w-6"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
