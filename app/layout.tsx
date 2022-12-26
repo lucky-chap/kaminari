@@ -51,7 +51,7 @@ export default function AboutLayout({
       <body className="min-h-screen flex-col bg-black font-inter text-white">
         <Header items={navItems} />
         {/* <Palette /> */}
-        {children}
+        <section className="min-h-[89vh]">{children}</section>
         <Footer />
       </body>
     </html>

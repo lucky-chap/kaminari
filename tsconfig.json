@@ -20,7 +20,8 @@
       "@/hooks/*": ["hooks/*"],
       "@/lib/*": ["lib/*"],
       "@/config/*": ["config/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/public/*": ["public/*"]
     },
     "plugins": [
       {

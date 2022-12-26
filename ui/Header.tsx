@@ -13,7 +13,7 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { NavItem } from "types"
 
-import { FiCommand } from "react-icons/fi"
+import { FiCommand, FiGithub } from "react-icons/fi"
 
 interface MainNavProps {
   items: NavItem[]
@@ -86,12 +86,14 @@ export default function Header({ items, children }: MainNavProps) {
               className="flex justify-end"
             />
           </nav> */}
-          <button
-            onClick={() => console.log("Lucifer")}
+          <a
+            href="https://github.com/lucky-chap/kaminari"
+            target="_blank"
+            rel="noreferrer"
             className="group rounded bg-gray-1000 p-2 transition-colors duration-100 ease-linear hover:bg-gray-1001"
           >
-            <FiCommand className="text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-100" />
-          </button>
+            <FiGithub className="text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-100" />
+          </a>
         </div>
         {showMobileMenu && <MobileNav items={items}>{children}</MobileNav>}
       </div>
