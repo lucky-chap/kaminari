@@ -1,11 +1,8 @@
-import Image from "next/image"
-import siteBanner from "../../public/site-banner-white.png"
-
 export default function Home() {
   return (
     <section className="container mx-auto text-left">
-      <div className="mx-auto max-w-4xl px-2 pt-10">
-        <h2 className="leading-tighter my-4 mx-auto max-w-2xl text-3xl font-extrabold tracking-tighter md:text-5xl">
+      <div className="mx-auto max-w-2xl px-2 pt-10">
+        <h2 className="leading-tighter my-4 max-w-2xl text-3xl font-extrabold tracking-tighter md:text-5xl">
           <span>About Kaminari NextJS TailwindCSS Template</span>
         </h2>
 
@@ -19,17 +16,7 @@ export default function Home() {
           repellat! Architecto facere nulla voluptatem dolor voluptatibus
           laudantium earum consectetur facilis cupiditate! Maiores praesentium
           ut adipisci libero provident facere at beatae non, molestias hic
-          eligendi magni explicabo, similique dolor quibusdam? Autem repellendus
-          deleniti odio at officia doloribus facilis cupiditate mollitia dolorem
-          suscipit quia eius magnam asperiores nihil eligendi architecto
-          excepturi aut atque, rem error distinctio labore. Quae laboriosam
-          ducimus esse possimus, eum voluptate eaque voluptas unde corporis
-          labore, vel vitae est neque tempore similique suscipit necessitatibus
-          error debitis ipsa cupiditate earum. Nemo sapiente eaque labore ullam
-          iste at architecto quasi perferendis voluptatem tempore incidunt iusto
-          ut fugit id cum dolorum est consequatur, corporis voluptatibus qui
-          deserunt veniam! Asperiores, dolor ut inventore exercitationem minima
-          incidunt molestias illo temporibus!
+          eligendi magni explicabo, similique dolor quibusdam?
         </p>
         <div>
           <a

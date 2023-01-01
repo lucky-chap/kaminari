@@ -11,6 +11,7 @@ import { NavItem } from "types"
 
 const inter = Inter({
   variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 })
 
 const navItems: NavItem[] = [
@@ -20,14 +21,14 @@ const navItems: NavItem[] = [
     href: "/blog",
   },
   {
-    title: "About",
-    isExternal: false,
-    href: "/about",
-  },
-  {
     title: "Projects",
     isExternal: false,
     href: "/projects",
+  },
+  {
+    title: "About",
+    isExternal: false,
+    href: "/about",
   },
   // {
   //   title: "Source Code",
@@ -48,7 +49,9 @@ export default function AboutLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="min-h-screen flex-col bg-black font-inter text-white">
+      <body
+        className={`min-h-screen flex-col bg-black font-inter text-white ${inter.style}`}
+      >
         <Header items={navItems} />
         {/* <Palette /> */}
         <section className="min-h-[89vh]">{children}</section>

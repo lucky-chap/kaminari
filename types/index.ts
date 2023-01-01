@@ -7,3 +7,12 @@ export type NavItem = {
   disabled?: boolean
   icon?: Icon
 }
+
+export type CardProps = {
+  src?: any | string
+  alt: string
+  githubUrl?: string
+  liveUrl?: string
+  title: string
+  description?: string
+}
