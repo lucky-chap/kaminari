@@ -13,6 +13,7 @@ export default function Hero() {
           alt="gradient"
           height={300}
           width={1400}
+          loading="lazy"
         />
         <div className="px-2">
           {/* badge */}
@@ -51,7 +52,7 @@ export default function Hero() {
               fast
             </span>
           </h1>
-          <p className="font-grotesk mx-auto max-w-xl px-2 pb-6 text-lg font-medium text-gray-one md:max-w-2xl md:px-6">
+          <p className="mx-auto max-w-xl px-2 pb-6 font-grotesk text-lg font-medium text-gray-one md:max-w-2xl md:px-6">
             Power packed, no nonsense, production-ready Next.js starter template
             to get you up to speed in your next project.
           </p>

@@ -6,14 +6,14 @@ import { CardProps } from "types"
 export default function BlogCard({ src, alt = "Project", title }: CardProps) {
   return (
     <div className="group">
-      <Link href="/blog/single-blog">
+      <Link href="/blog/single">
         <div className="rounded border-2 border-transparent transition-all duration-100 ease-linear">
           <div className="h-[150px]">
             <Image
               src={src}
               alt={alt}
               className="aspect-square h-full w-full rounded object-cover"
-              priority
+              loading="lazy"
             />
           </div>
           <h4 className="pt-2 text-sm font-bold text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">

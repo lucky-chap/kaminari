@@ -47,12 +47,10 @@ export default function AboutLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body
-        className={`font-inter min-h-screen flex-col bg-black text-white ${inter.variable} font-sans`}
-      >
+      <body className="min-h-screen flex-col bg-black font-inter text-white">
         <Header items={navItems} />
         {/* <Palette /> */}
-        <section className="min-h-[89vh]">{children}</section>
+        <section className="min-h-[85vh]">{children}</section>
         <Footer />
       </body>
     </html>

@@ -31,7 +31,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans],
+        inter: ["Inter", ...fontFamily.sans],
+        grotesk: ["Space Grotesk", ...fontFamily.sans],
       },
       backgroundImage: ({ theme }) => ({
         "vc-border-gradient": `radial-gradient(at left top, ${theme(

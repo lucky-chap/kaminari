@@ -21,15 +21,15 @@ export default function ProjectCard({
               src={src}
               alt={alt}
               className="aspect-square h-full w-full rounded object-cover"
-              priority
+              loading="lazy"
             />
           </div>
-          <Link href="/single-project">
+          <Link href="/projects/single">
             <h4 className="pt-2 text-sm font-bold text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
               {title}
             </h4>
           </Link>
-          <p className="py-1 text-sm text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
+          <p className="py-1 font-grotesk text-sm text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
             {description}
           </p>
           <div className="flex items-center pt-2">
