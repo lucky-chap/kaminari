@@ -13,7 +13,7 @@ import { useSelectedLayoutSegment } from "next/navigation"
 import React, { useEffect, useState } from "react"
 import { NavItem } from "types"
 
-import { FiCommand, FiGithub } from "react-icons/fi"
+import { FiGithub } from "react-icons/fi"
 
 interface MainNavProps {
   items: NavItem[]

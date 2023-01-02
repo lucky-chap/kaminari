@@ -6,7 +6,7 @@ export default function Home() {
           <span>About Kaminari NextJS TailwindCSS Template</span>
         </h2>
 
-        <p className="font-grotesk text-lg font-medium leading-8 text-gray-one">
+        <p className="text-lg font-medium leading-8 text-gray-one">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
           deserunt iste adipisci ea. Dolorem quo aliquid non, fugiat animi
           itaque sed eum error, beatae qui cum ad similique mollitia dolore

@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import Image from "next/image"
-import rocketImage from "../public/rocket.webp"
+// import rocketImage from "../public/rocket.webp"
 
 export default function Hero() {
   return (
@@ -16,12 +16,12 @@ export default function Hero() {
         />
         <div className="px-2">
           {/* badge */}
-          <div className="mx-auto flex max-w-[15rem] cursor-pointer items-center justify-around rounded-3xl bg-gray-100 p-2 text-center text-black transition-all duration-100 ease-linear hover:bg-gray-200">
+          {/* <div className="mx-auto flex max-w-[15rem] cursor-pointer items-center justify-around rounded-3xl bg-gray-100 p-2 text-center text-black transition-all duration-100 ease-linear hover:bg-gray-200">
             <Image src={rocketImage} width={20} height={20} alt="rocket" />
-            <p className="font-grotesk text-sm font-light">
+            <p className="text-sm font-light text-zinc-400">
               #1 Next.js Starter Template
             </p>
-          </div>
+          </div> */}
           {/* text */}
 
           <h1
@@ -51,7 +51,7 @@ export default function Hero() {
               fast
             </span>
           </h1>
-          <p className="mx-auto max-w-xl px-2 pb-6 font-grotesk text-xl font-medium text-gray-one md:max-w-2xl md:px-6">
+          <p className="font-grotesk mx-auto max-w-xl px-2 pb-6 text-lg font-medium text-gray-one md:max-w-2xl md:px-6">
             Power packed, no nonsense, production-ready Next.js starter template
             to get you up to speed in your next project.
           </p>

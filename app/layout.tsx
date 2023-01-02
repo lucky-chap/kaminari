@@ -1,5 +1,3 @@
-"use client"
-
 import "@/styles/globals.css"
 import { Footer } from "@/ui/Footer"
 import Header from "@/ui/Header"
@@ -7,11 +5,11 @@ import { Inter } from "@next/font/google"
 import React from "react"
 import { NavItem } from "types"
 
-// import Palette from "@/ui/components/Palette"
-
 const inter = Inter({
   variable: "--font-inter",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["900"],
+  preload: false,
+  subsets: ["latin"],
 })
 
 const navItems: NavItem[] = [
@@ -50,7 +48,7 @@ export default function AboutLayout({
       */}
       <head />
       <body
-        className={`min-h-screen flex-col bg-black font-inter text-white ${inter.style}`}
+        className={`font-inter min-h-screen flex-col bg-black text-white ${inter.variable} font-sans`}
       >
         <Header items={navItems} />
         {/* <Palette /> */}

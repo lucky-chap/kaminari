@@ -3,6 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require("tailwindcss/colors")
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -30,8 +31,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        inter: "Inter",
-        grotesk: "Space Grotesk",
+        sans: ["var(--font-inter)", ...fontFamily.sans],
       },
       backgroundImage: ({ theme }) => ({
         "vc-border-gradient": `radial-gradient(at left top, ${theme(
