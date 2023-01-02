@@ -29,7 +29,7 @@ export default function ProjectCard({
               {title}
             </h4>
           </Link>
-          <p className="py-1 font-grotesk text-sm text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
+          <p className="py-1 text-sm text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
             {description}
           </p>
           <div className="flex items-center pt-2">

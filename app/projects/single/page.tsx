@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { FiGithub, FiLink } from "react-icons/fi"
@@ -40,7 +38,7 @@ export default function Page() {
           </a>
         </div>
       </div>
-      <p className="py-2 font-grotesk text-lg font-bold text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
+      <p className="py-2 text-lg font-bold text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-300">
         Creating technology to empower civilians to explore space on their own
         terms.
       </p>

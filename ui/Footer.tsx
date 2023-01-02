@@ -14,7 +14,7 @@ export function Footer() {
             href="https://quavo.vercel.app"
             rel="noreferrer"
             target="_blank"
-            className="inline-block px-1 font-bold text-gray-one/70 transition-colors duration-100 ease-linear group-hover:text-white"
+            className="inline-block px-1 font-bold text-gray-one transition-colors duration-100 ease-linear group-hover:text-white"
           >
             Heylel
           </a>
