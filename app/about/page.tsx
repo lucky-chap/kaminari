@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Page() {
   return (
     <section className="container mx-auto text-left">
       <div className="mx-auto max-w-2xl px-2 pt-10">

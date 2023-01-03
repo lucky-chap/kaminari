@@ -1,19 +1,18 @@
 "use client"
 
-import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 import { MdOutlineKeyboardBackspace } from "react-icons/md"
 
 export default function Page() {
-  const router = useRouter()
   return (
     <section className="mx-auto max-w-2xl px-2 pt-10">
-      <button
-        onClick={() => router.back()}
+      <Link
+        href="/blog"
         className="group inline-flex rounded bg-gray-1001 p-2 transition-colors duration-100 ease-linear hover:bg-gray-1001/70"
       >
         <MdOutlineKeyboardBackspace className="text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-100" />
-      </button>
+      </Link>
       <div className="pt-5">
         <h2 className="leading-tighter mx-auto mt-3 max-w-2xl text-3xl font-extrabold tracking-tighter md:text-5xl">
           How to use Contentlayer With Next.js 13 and Tailwind CSS

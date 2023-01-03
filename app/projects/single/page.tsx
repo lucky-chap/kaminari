@@ -1,22 +1,22 @@
 "use client"
 
+import Link from "next/link"
+
 import Image from "next/image"
-import { useRouter } from "next/navigation"
 import { FiGithub, FiLink } from "react-icons/fi"
 // import { IoReturnUpBack } from "react-icons/io"
 import { MdOutlineKeyboardBackspace } from "react-icons/md"
 import planetImage from "../../../public/assets/planet.jpg"
 
 export default function Page() {
-  const router = useRouter()
   return (
     <div className="mx-auto max-w-2xl px-2 pt-10">
-      <button
-        onClick={() => router.back()}
+      <Link
+        href="/projects"
         className="group inline-flex rounded bg-gray-1001 p-2 transition-colors duration-100 ease-linear hover:bg-gray-1001/70"
       >
         <MdOutlineKeyboardBackspace className="text-gray-one transition-colors duration-100 ease-linear group-hover:text-gray-100" />
-      </button>
+      </Link>
       <div className="flex items-center justify-between">
         <h2 className="leading-tighter mt-3 max-w-2xl text-3xl font-extrabold tracking-tighter md:text-5xl">
           Planetaria
