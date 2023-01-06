@@ -14,7 +14,7 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md"
 
 import { PostProps } from "types"
 import { components } from "@/ui/components/MDXComponents"
-import { allPosts } from "@/mdx-content"
+import { allPosts } from "contentlayer/generated"
 
 export default function Page({ params }: { params: { slug: string } }) {
   const post = allPosts.find((p: PostProps) => p.slug === params.slug)

@@ -5,7 +5,7 @@
 /* eslint-disable import/no-relative-packages */
 import BlogsGrid from "@/ui/components/BlogsGrid"
 
-import { allPosts } from "@/mdx-content"
+import { allPosts } from "contentlayer/generated"
 
 export default function Home() {
   return (
