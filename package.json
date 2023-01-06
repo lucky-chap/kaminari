@@ -13,7 +13,8 @@
     "content": "npx contentlayer build",
     "prettier:check": "prettier --check --ignore-unknown .",
     "lint:multi": "yarn prettier:check && yarn lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "npx contentlayer build"
   },
   "lint-staged": {
     "**/*.(ts|tsx|js)": [
@@ -50,6 +51,7 @@
     "react-github-btn": "^1.4.0",
     "react-icons": "^4.7.1",
     "rehype-pretty-code": "^0.6.0",
+    "sharp": "^0.31.3",
     "shiki": "^0.12.1",
     "tailwind-merge": "^1.8.0",
     "typescript": "4.9.3",
