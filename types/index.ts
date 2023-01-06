@@ -16,3 +16,21 @@ export type CardProps = {
   title: string
   description?: string
 }
+
+export type PostProps = {
+  _id: string
+  title: string
+  slug: string
+  description?: string
+  imageSrc?: string
+  imageAlt?: string
+  body: {
+    code: string
+    raw?: string
+  }
+  status?: string
+  headings?: string[]
+  tweetIds?: string[]
+  publishedAt?: string
+  publishedAtFormatted?: string
+}

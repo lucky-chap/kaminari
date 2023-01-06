@@ -22,7 +22,7 @@
       "@/config/*": ["config/*"],
       "@/styles/*": ["styles/*"],
       "@/public/*": ["public/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"]
+      "@/mdx-content": ["./.contentlayer/generated"]
     },
     "plugins": [
       {

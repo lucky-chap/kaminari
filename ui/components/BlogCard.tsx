@@ -1,17 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { CardProps } from "types"
+import { PostProps } from "types"
 
-export default function BlogCard({ src, alt = "Project", title }: CardProps) {
+export default function BlogCard({
+  title,
+  imageSrc,
+  imageAlt,
+  slug,
+}: PostProps) {
   return (
     <div className="group">
-      <Link href="/blog/single">
+      <Link href={`/blog/${slug}`}>
         <div className="rounded border-2 border-transparent transition-all duration-100 ease-linear">
           <div className="h-[150px]">
             <Image
-              src={src}
-              alt={alt}
+              src={imageSrc}
+              alt={imageAlt}
               className="aspect-square h-full w-full rounded object-cover"
               loading="lazy"
             />

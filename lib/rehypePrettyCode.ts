@@ -1,12 +1,13 @@
+/* eslint-disable sonarjs/cognitive-complexity */
+/* eslint-disable no-shadow */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
-/* eslint-disable sonarjs/cognitive-complexity */
 import { type Options } from "rehype-pretty-code"
 import { visit } from "unist-util-visit"
 
 // div.BLOCK > pre.PRE > code.CODE
 const BLOCK =
-  "overflow-hidden rounded-lg bg-rose-100/5 shadow-surface-elevation-low ring-1 ring-rose-100/[3%] ring-inset"
+  "overflow-hidden rounded-lg bg-gray-900 shadow-surface-elevation-low ring-1 ring-rose-100/[3%] ring-inset"
 const TITLE =
   "mb-0.5 rounded-md bg-rose-100/10 px-3 py-1 font-mono text-xs text-rose-100/70 shadow-sm"
 const PRE = "overflow-x-auto py-2 text-[13px] leading-6 [color-scheme:dark]"
@@ -67,34 +68,34 @@ export function rehypePrettyCodeClasses() {
             ...(node.properties.className || []),
             BLOCK,
           ]
-          node.children = node.children.map((target: any) => {
+          node.children = node.children.map((node: any) => {
             if (
-              target.tagName === "div" &&
-              typeof target.properties?.["data-rehype-pretty-code-title"] !==
+              node.tagName === "div" &&
+              typeof node.properties?.["data-rehype-pretty-code-title"] !==
                 "undefined"
             ) {
-              target.properties.className = [
-                ...(target.properties.className || []),
+              node.properties.className = [
+                ...(node.properties.className || []),
                 TITLE,
               ]
             }
-            if (target.tagName === "pre") {
-              target.properties.className = [PRE]
-              if (target.children[0].tagName === "code") {
-                target.children[0].properties.className = [
-                  ...(target.children[0].properties.className || []),
+            if (node.tagName === "pre") {
+              node.properties.className = [PRE]
+              if (node.children[0].tagName === "code") {
+                node.children[0].properties.className = [
+                  ...(node.children[0].properties.className || []),
                   CODE,
                 ]
                 if (
-                  typeof target.children[0].properties["data-line-numbers"] !==
+                  typeof node.children[0].properties["data-line-numbers"] !==
                   "undefined"
                 ) {
-                  target.children[0].properties.className.push(NUMBERED_LINES)
+                  node.children[0].properties.className.push(NUMBERED_LINES)
                 }
               }
             }
 
-            return target
+            return node
           })
 
           return node
@@ -105,6 +106,7 @@ export function rehypePrettyCodeClasses() {
 }
 
 export const rehypePrettyCodeOptions: Partial<Options> = {
+  // Use one of Shiki's packaged themes
   theme: "one-dark-pro",
   tokensMap: {
     // VScode command palette: Inspect Editor Tokens and Scopes
@@ -118,9 +120,12 @@ export const rehypePrettyCodeOptions: Partial<Options> = {
     if (node.children.length === 0) {
       node.children = [{ type: "text", value: " " }]
     }
-    node.properties.className = [""]
   },
+  // Feel free to add classNames that suit your docs
   onVisitHighlightedLine(node) {
     node.properties.className.push(HIGHLIGHTED_LINE)
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ["word"]
   },
 }

@@ -10,6 +10,7 @@
     "test": "jest",
     "test:e2e": "cypress open",
     "prettier": "prettier --write --ignore-unknown .",
+    "content": "npx contentlayer build",
     "prettier:check": "prettier --check --ignore-unknown .",
     "lint:multi": "yarn prettier:check && yarn lint",
     "prepare": "husky install"

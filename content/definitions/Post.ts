@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
 
 // Inspired by Delba Oliveira (https://delba.dev)
 
