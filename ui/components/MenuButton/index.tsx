@@ -1,7 +1,7 @@
 import React from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 
-import { Space_Mono as SpaceMono } from "@next/font/google"
+import { Space_Mono as SpaceMono } from "next/font/google"
 
 const mono = SpaceMono({
   variable: "--font-mono",

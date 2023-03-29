@@ -2,7 +2,7 @@
 
 import Ellipses from "@/ui/components/EllipsesContainer"
 import MenuButton from "@/ui/components/MenuButton"
-import { Space_Mono as SpaceMono } from "@next/font/google"
+import { Space_Mono as SpaceMono } from "next/font/google"
 import React from "react"
 
 const mono = SpaceMono({
@@ -17,7 +17,16 @@ export default function Home() {
     <main className="flex flex-col lg:flex-row">
       <section className="flex h-screen w-full flex-col justify-between p-9 lg:h-auto">
         <div className="flex w-full items-center justify-between">
-          <h2 className={`text-2xl font-bold ${mono.className}`}>Kami.</h2>
+          <h2
+            className={`flex items-center text-2xl font-bold ${mono.className}`}
+          >
+            Kami.{" "}
+            <button
+              className={`text-sm font-bold ${mono.className} group ml-2 rounded-3xl bg-[#ffefd6] px-3 text-black`}
+            >
+              <span className="">v2</span>
+            </button>
+          </h2>
           {/* <p className="text-xs font-bold uppercase tracking-wide">
             Prototype <span className={`${mono.className}`}>01</span>
           </p> */}
@@ -47,8 +56,10 @@ export default function Home() {
               rel="noreferrer"
               className="pb-1 text-white underline"
             >
-              Virgil
-            </a>
+              Virgil.
+            </a>{" "}
+            ⚠️ Under Development
+            {/* ffefd6 */}
           </p>
           {/* <textarea
             name=""
