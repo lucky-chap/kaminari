@@ -33,6 +33,7 @@ module.exports = {
       fontFamily: {
         inter: ["Inter", ...fontFamily.sans],
         grotesk: ["Space Grotesk", ...fontFamily.sans],
+        mono: ["Space Mono", ...fontFamily.sans],
       },
       backgroundImage: ({ theme }) => ({
         "vc-border-gradient": `radial-gradient(at left top, ${theme(
@@ -82,5 +83,5 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
+  plugins: [require("@tailwindcss/forms")],
 }

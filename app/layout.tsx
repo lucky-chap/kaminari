@@ -1,39 +1,58 @@
 import "@/styles/globals.css"
-import { Footer } from "@/ui/Footer"
-import Header from "@/ui/Header"
-import { Inter } from "@next/font/google"
 import React from "react"
-import { NavItem } from "types"
 
-const inter = Inter({
-  variable: "--font-inter",
-  weight: ["900"],
-  preload: false,
+import { Space_Grotesk as Grotesk } from "next/font/google"
+
+// this export replaces the need to use the "head" file in Next.js 13.2
+// https://beta.nextjs.org/docs/api-reference/file-conventions/head#migration-guide
+export const metadata = {
+  title: "Kaminari",
+  generator: "Next.js",
+  applicationName: "Kaminari",
+  referrer: "origin-when-cross-origin",
+  keywords: ["Next.js", "React", "JavaScript", "Boilerplate", "Template"],
+  authors: [{ name: "Virgil", url: "https://heylel.vercel.app" }],
+  colorScheme: "dark",
+  creator: "Virgil",
+  publisher: "Virgil",
+  alternates: {},
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    title: "Kaminari",
+    description: "Next.js Tailwind CSS Starter Template",
+    url: "https://kaminari.vercel.app",
+    siteName: "Kaminari",
+    images: [
+      {
+        url: "https://nextjs.org/og.png",
+        width: 800,
+        height: 600,
+      },
+      {
+        url: "https://nextjs.org/og-alt.png",
+        width: 1800,
+        height: 1600,
+        alt: "Next.js Tailwind CSS Starter Template",
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+  },
+}
+
+const grotesk = Grotesk({
+  variable: "--font-grotesk",
+  weight: ["300", "400", "500", "600", "700"],
+  preload: true,
   subsets: ["latin"],
 })
-
-const navItems: NavItem[] = [
-  {
-    title: "Blog",
-    isExternal: false,
-    href: "/blog",
-  },
-  {
-    title: "Projects",
-    isExternal: false,
-    href: "/projects",
-  },
-  {
-    title: "About",
-    isExternal: false,
-    href: "/about",
-  },
-  // {
-  //   title: "Source Code",
-  //   isExternal: true,
-  //   href: "https://github.com/lucky-chap/kaminari",
-  // },
-]
 
 export default function AboutLayout({
   children,
@@ -47,11 +66,13 @@ export default function AboutLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="min-h-screen flex-col bg-black font-inter text-white">
-        <Header items={navItems} />
+      <body
+        className={`flex-col bg-black font-grotesk text-white ${grotesk.className}`}
+      >
+        {/* <Header items={navItems} /> */}
         {/* <Palette /> */}
-        <section className="min-h-[85vh]">{children}</section>
-        <Footer />
+        <main className="min-h-screen">{children}</main>
+        {/* <Footer /> */}
       </body>
     </html>
   )

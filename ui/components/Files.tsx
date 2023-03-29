@@ -17,7 +17,7 @@ function Inner({ data, lvl }: { data: Node[]; lvl: number }) {
         <React.Fragment key={node.name}>
           <div
             className={cx(
-              "flex items-center space-x-2 border-l-4 border-l-transparent pr-4 before:mr-4 before:ml-2 before:inline-block before:w-4 before:text-right before:[counter-increment:line] before:[content:counter(line)]",
+              "flex items-center space-x-2 border-l-4 border-l-transparent pr-4 before:ml-2 before:mr-4 before:inline-block before:w-4 before:text-right before:[content:counter(line)] before:[counter-increment:line]",
               {
                 "border-l-rose-300/70 bg-rose-200/10 before:text-white/70":
                   node.isHighlighted,

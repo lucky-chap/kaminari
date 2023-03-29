@@ -1,0 +1,243 @@
+@import "./mixins";
+
+$tiber: #09383e;
+$elephant: #0c383e;
+$white: #fff;
+
+.container__item {
+  margin: 0 auto 40px;
+}
+
+.landing-page-container {
+  width: 100%;
+  min-height: 100%;
+  height: 40rem;
+  background-image: url("https://s29.postimg.org/vho8xb2pj/landing_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  font-family: "Space Grotesk", sans-serif;
+  color: $tiber;
+}
+
+.content__wrapper {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 2rem;
+
+  @include lg {
+    top: 6rem;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 2rem;
+  padding: 4.5rem 0;
+  display: block;
+}
+
+.menu-icon {
+  width: 2.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.header__item {
+  display: inline-block;
+  float: left;
+}
+
+.menu-icon__line {
+  width: 1.5rem;
+  height: 0.2rem;
+  background-color: $elephant;
+  display: block;
+
+  &:before,
+  &:after {
+    content: "";
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: $elephant;
+    display: inline-block;
+    position: relative;
+  }
+
+  &:before {
+    left: 0.5rem;
+    top: -0.6rem;
+  }
+
+  &:after {
+    top: -1.8rem;
+  }
+}
+
+.heading {
+  width: 90%;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.7rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ellipses-container {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 7.5rem;
+  left: -1rem;
+
+  @include sm {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  @include lg {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .greeting {
+    position: absolute;
+    top: 8.6rem;
+    left: 2rem;
+    right: 0;
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 3rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.5;
+
+    @include sm {
+      top: 13.6rem;
+      left: 7rem;
+    }
+
+    @include lg {
+      top: 11rem;
+      left: 4.5rem;
+    }
+
+    // @include lg {
+    //     width: 25rem;
+    //     height: 25rem;
+    // }
+
+    // &:after {
+    //     content: '';
+    //     width: 0.3rem;
+    //     height: 0.3rem;
+    //     border-radius: 50%;
+    //     display: inline-block;
+    //     background-color: $elephant;
+    //     position: relative;
+    //     top: -0.65rem;
+    //     left: -5.05rem;
+    // }
+  }
+}
+
+.ellipses {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  border-style: solid;
+}
+
+.ellipses__outer--thin {
+  width: 100%;
+  height: 100%;
+  border-width: 1px;
+  border-color: rgba(9, 56, 62, 0.1);
+  animation: ellipsesOrbit 15s ease-in-out infinite;
+
+  &:after {
+    content: "";
+    background-image: url("https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.15;
+  }
+}
+
+.ellipses__outer--thick {
+  width: 99.5%;
+  height: 99.5%;
+  border-color: $tiber transparent;
+  border-width: 2px;
+  transform: rotate(-45deg);
+  animation: ellipsesRotate 15s ease-in-out infinite;
+}
+
+.ellipses__orbit {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-width: 2px;
+  border-color: $tiber;
+  top: 0rem;
+  right: 3.75rem;
+
+  @include sm {
+    width: 2rem;
+    height: 2rem;
+    right: 8.5rem;
+  }
+
+  @include lg {
+    width: 2rem;
+    height: 2rem;
+    right: 6.75rem;
+  }
+
+  &:before {
+    content: "";
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $tiber;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes ellipsesRotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes ellipsesOrbit {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
