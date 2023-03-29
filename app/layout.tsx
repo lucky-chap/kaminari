@@ -1,6 +1,8 @@
 import "@/styles/globals.css"
 import React from "react"
 
+import { Space_Grotesk as Grotesk } from "next/font/google"
+
 // this export replaces the need to use the "head" file in Next.js 13.2
 // https://beta.nextjs.org/docs/api-reference/file-conventions/head#migration-guide
 export const metadata = {
@@ -44,8 +46,6 @@ export const metadata = {
     index: true,
   },
 }
-
-import { Space_Grotesk as Grotesk } from "next/font/google"
 
 const grotesk = Grotesk({
   variable: "--font-grotesk",

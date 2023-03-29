@@ -3,13 +3,6 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 
 import { Space_Mono as SpaceMono } from "next/font/google"
 
-const mono = SpaceMono({
-  variable: "--font-mono",
-  weight: ["400", "700"],
-  preload: true,
-  subsets: ["latin"],
-})
-
 import {
   HamburgerMenuIcon,
   DotFilledIcon,
@@ -19,7 +12,14 @@ import {
 
 import "./styles.css"
 
-const MenuButton = () => {
+const mono = SpaceMono({
+  variable: "--font-mono",
+  weight: ["400", "700"],
+  preload: true,
+  subsets: ["latin"],
+})
+
+function MenuButton() {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true)
   const [urlsChecked, setUrlsChecked] = React.useState(false)
   const [person, setPerson] = React.useState("pedro")
@@ -33,7 +33,7 @@ const MenuButton = () => {
 
         <button
           aria-label="Customise options"
-          className={`group rounded-3xl bg-white px-7 py-2 text-sm font-bold text-black`}
+          className="group rounded-3xl bg-white px-7 py-2 text-sm font-bold text-black"
         >
           <span className="">Menu</span>
         </button>

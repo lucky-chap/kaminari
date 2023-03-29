@@ -20,8 +20,8 @@ export function Aside({
       })}
     >
       <div
-        className={clsx("relative xl:absolute xl:top-0 xl:left-0 xl:right-0", {
-          "z-10 border-l-2 border-rose-200/5 bg-gray-900 pl-4 shadow-[0_0_30px_20px] shadow-gray-900 xl:border-t-2 xl:border-l-0 xl:py-6 xl:pl-0":
+        className={clsx("relative xl:absolute xl:left-0 xl:right-0 xl:top-0", {
+          "z-10 border-l-2 border-rose-200/5 bg-gray-900 pl-4 shadow-[0_0_30px_20px] shadow-gray-900 xl:border-l-0 xl:border-t-2 xl:py-6 xl:pl-0":
             styled,
         })}
       >
