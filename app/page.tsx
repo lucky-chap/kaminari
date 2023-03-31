@@ -103,7 +103,7 @@ export default function Home() {
 
       {/* second half */}
 
-      <section className="md first-page flex h-screen w-full flex-col justify-between bg-[#e0f5ff] p-9">
+      <section className="first-page hidden h-screen w-full flex-col justify-between bg-[#e0f5ff] p-9 lg:flex">
         <Ellipses />
       </section>
     </main>
