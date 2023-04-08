@@ -21,7 +21,7 @@ export default function PageWrapper({
   const router = useRouter()
 
   return (
-    <div>
+    <>
       <div className="flex w-full items-center justify-between">
         <button
           onClick={() => router.push("/")}
@@ -64,6 +64,6 @@ export default function PageWrapper({
           <span className="">Next</span>
         </button>
       </div>
-    </div>
+    </>
   )
 }
