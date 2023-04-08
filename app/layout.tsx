@@ -1,7 +1,14 @@
 import "@/styles/globals.css"
 import React from "react"
 
-import { Space_Grotesk as Grotesk } from "next/font/google"
+import { Space_Mono as SpaceMono } from "next/font/google"
+
+const mono = SpaceMono({
+  variable: "--font-mono",
+  weight: ["400", "700"],
+  preload: true,
+  subsets: ["latin"],
+})
 
 // this export replaces the need to use the "head" file in Next.js 13.2
 // https://beta.nextjs.org/docs/api-reference/file-conventions/head#migration-guide
@@ -47,14 +54,7 @@ export const metadata = {
   },
 }
 
-const grotesk = Grotesk({
-  variable: "--font-grotesk",
-  weight: ["300", "400", "500", "600", "700"],
-  preload: true,
-  subsets: ["latin"],
-})
-
-export default function AboutLayout({
+export default function IndexLayout({
   children,
 }: {
   children: React.ReactNode
@@ -67,12 +67,9 @@ export default function AboutLayout({
       */}
       <head />
       <body
-        className={`flex-col bg-black font-grotesk text-white ${grotesk.className}`}
+        className={`flex-col bg-black font-mono text-white ${mono.className}`}
       >
-        {/* <Header items={navItems} /> */}
-        {/* <Palette /> */}
         <main className="min-h-screen">{children}</main>
-        {/* <Footer /> */}
       </body>
     </html>
   )
