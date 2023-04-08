@@ -1,8 +1,6 @@
 import React from "react"
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 
-import { Space_Mono as SpaceMono } from "next/font/google"
-
 import {
   HamburgerMenuIcon,
   DotFilledIcon,
@@ -11,13 +9,6 @@ import {
 } from "@radix-ui/react-icons"
 
 import "./styles.css"
-
-const mono = SpaceMono({
-  variable: "--font-mono",
-  weight: ["400", "700"],
-  preload: true,
-  subsets: ["latin"],
-})
 
 function MenuButton() {
   const [bookmarksChecked, setBookmarksChecked] = React.useState(true)
