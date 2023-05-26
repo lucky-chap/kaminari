@@ -19,7 +19,7 @@
       "eslint --fix .",
       "prettier --write --ignore-unknown"
     ],
-    "**/*.(md|json)": "prettier --wirte --ignore-unknown"
+    "**/*.(md|json)": "prettier --write --ignore-unknown"
   },
   "husky": {
     "hooks": {
