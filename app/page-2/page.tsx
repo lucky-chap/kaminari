@@ -4,7 +4,7 @@ import Image from "next/image";
 import Wrapper from "@/components/wrapper";
 import { Button } from "@/components/ui/button";
 
-import robot from "@/public/images/robot.png";
+import manInWheelChair from "@/public/images/man-in-wheelchari.png";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
             <span
               className={`-mt-14 inline-block text-[64px] font-bold text-black dark:text-white`}
             >
-              01
+              02
             </span>
             <p className="pb-6 font-medium">
               Kami (short for Kaminari) is a modern Next.js and Tailwind CSS
@@ -54,8 +54,8 @@ export default function Home() {
 
       {/* second half */}
 
-      <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#d6ebe9] p-9">
-        <Image src={robot} alt="Man sitting in wheelchair" />
+      <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#e0f5ff] p-9">
+        <Image src={manInWheelChair} alt="Man sitting in wheelchair" />
       </section>
     </section>
   );
