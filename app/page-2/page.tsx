@@ -4,7 +4,7 @@ import Image from "next/image";
 import Wrapper from "@/components/wrapper";
 import { Button } from "@/components/ui/button";
 
-import manInWheelChair from "@/public/images/man-in-wheelchari.png";
+import manWIthRobot from "@/public/images/man-with-robot.png";
 
 export default function Home() {
   return (
@@ -18,19 +18,11 @@ export default function Home() {
               02
             </span>
             <p className="pb-6 font-medium">
-              Kami (short for Kaminari) is a modern Next.js and Tailwind CSS
-              boilerplate that includes all you need to build amazing projects.
-              No need to spend time on configuring the basic needs of a project.
-              I did that for you - Created by{" "}
-              <a
-                href="https://heylel.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-                className="pb-1 text-zinc-800 dark:text-zinc-100 underline"
-              >
-                Virgil.
-              </a>{" "}
-              ⚠️ Under Development
+              Ada Lovelace, an English mathematician and writer, is considered
+              the world&apos;s first computer programmer. She wrote the
+              world&apos;s first algorithm to be processed by a machine,
+              specifically for Charles Babbage&apos;s Analytical Engine, which
+              is considered the first general-purpose computer
             </p>
 
             <div className="mb-10 hidden">
@@ -55,7 +47,7 @@ export default function Home() {
       {/* second half */}
 
       <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#e0f5ff] p-9">
-        <Image src={manInWheelChair} alt="Man sitting in wheelchair" />
+        <Image src={manWIthRobot} alt="Man sitting in wheelchair" />
       </section>
     </section>
   );

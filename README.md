@@ -1,34 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img src="public/og.png" alt="Next.js and TypeScript">
+</p>
 
-## Getting Started
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
 
-First, run the development server:
+  <img alt="License" src="https://img.shields.io/github/license/chhpt/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  <a href="https://twitter.com/intent/follow?screen_name=hunchodotdev">
+    <img src="https://img.shields.io/twitter/follow/hunchodotdev?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @hunchodotdev" />
+  </a>
+</p>
+
+<br>
+
+A Next.js starter that includes all you need to build amazing projects 🔥 Fork and customize from [lucky-chap](https://github.com/lucky-chap/kaminari)
+
+- 🚀 **Next.js 13**
+- ⚙️ **Tailwind CSS 3** - A utility-first CSS framework
+- ⚙️ **shadcn-ui** - A n awesome component library
+- 🍓 **TypeScript** - JavaScript superset
+- 📏 **ESLint** — Pluggable JavaScript linter
+- 💖 **Prettier** - Opinionated Code Formatter (coming soon)
+- 🐶 **Husky** — Use git hooks with ease (coming soon)
+- 🚫 **lint-staged** - Run linters against staged git files (coming soon)
+- 🚫 **commitlint** - Lint your commits and adhere to a commit convention (coming soon)
+- 🃏 **Jest** - The delightful JavaScript Testing Framework (coming soon)
+- 🗂 **Absolute import** - Import folders and files using the `@` prefix
+
+## 🚀 Getting started
+
+The best way to start with this template is using `create-next-app`.
+
+```
+npx create-next-app my-app -e https://github.com/lucky-chap/kaminari
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you prefer you can clone this repository and run the following commands inside the project folder:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. `npm install` or `yarn`;
+2. `yarn dev`;
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To view the project open `http://localhost:3000`.
 
-## Learn More
+## ✨ Star
 
-To learn more about Next.js, take a look at the following resources:
+I want this project to go far. Please show your support by starring it. Thank you!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤝 Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Fork this repository;
+2. Create your branch: `git checkout -b my-new-feature`;
+3. Commit your changes: `git commit -m 'Add some feature'`;
+4. Push to the branch: `git push origin my-new-feature`.
 
-## Deploy on Vercel
+**After your pull request is merged**, you can safely delete your branch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more information.
+
+---
+
+Made with ♥ by [Virgil](https://twitter.com/hunchodotdev)
+
+## 🔗 Important Links
+
+- [Custom Cypress Config](https://github.com/cypress-io/cypress/issues/22059#issuecomment-1178574704)

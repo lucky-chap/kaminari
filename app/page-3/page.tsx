@@ -18,19 +18,10 @@ export default function Home() {
               03
             </span>
             <p className="pb-6 font-medium">
-              Kami (short for Kaminari) is a modern Next.js and Tailwind CSS
-              boilerplate that includes all you need to build amazing projects.
-              No need to spend time on configuring the basic needs of a project.
-              I did that for you - Created by{" "}
-              <a
-                href="https://heylel.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-                className="pb-1 text-zinc-800 dark:text-zinc-100 underline"
-              >
-                Virgil.
-              </a>{" "}
-              ⚠️ Under Development
+              The computer mouse was invented by Douglas Engelbart in 1964. He
+              demonstrated the mouse along with other groundbreaking
+              technologies in a famous presentation known as &apos;The Mother of
+              All Demos&apos;
             </p>
 
             <div className="mb-10 hidden">
