@@ -32,19 +32,16 @@ export default function Home() {
               </a>{" "}
             </p>
 
-            <div className="mb-10 hidden">
-              <a
-                href="https://github.com/lucky-chap/kaminari"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-block w-full text-base transition-all duration-100 ease-linear font-bold hover:bg-black/90 group rounded bg-black px-7 py-4 text-center text-white`}
-              >
-                <span className="">Repo</span>
-              </a>
-            </div>
             <div className="">
               <Button size="xl" className="w-full font-bold" variant="brand">
-                Repo
+                <a
+                  href="https://kaminari.vercel.app"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="pb-1 dark:text-zinc-800 text-zinc-100"
+                >
+                  Repo
+                </a>{" "}
               </Button>
             </div>
           </div>
