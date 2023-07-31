@@ -18,7 +18,7 @@ A Next.js starter that includes all you need to build amazing projects 🔥 Fork
 
 - 🚀 **Next.js 13**
 - ⚙️ **Tailwind CSS 3** - A utility-first CSS framework
-- ⚙️ **shadcn-ui** - A n awesome component library
+- ⚙️ **shadcn-ui** - An awesome component library
 - 🍓 **TypeScript** - JavaScript superset
 - 📏 **ESLint** — Pluggable JavaScript linter
 - 💖 **Prettier** - Opinionated Code Formatter (coming soon)
