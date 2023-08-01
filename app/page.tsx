@@ -35,7 +35,7 @@ export default function Home() {
             <div className="">
               <Button size="xl" className="w-full font-bold" variant="brand">
                 <a
-                  href="https://kaminari.vercel.app"
+                  href="https://github.com/lucky-chap/kaminari"
                   target="_blank"
                   rel="noreferrer"
                   className="pb-1 dark:text-zinc-800 text-zinc-100"
