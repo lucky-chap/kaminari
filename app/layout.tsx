@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL("https://kaminari.vercel.app"),
   openGraph: {
     title: "Kaminari",
     description: "Next.js, TailwindCSS and shadcn-ui Starter Template",

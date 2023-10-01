@@ -11,25 +11,25 @@
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
-    "@types/node": "20.4.5",
-    "@types/react": "18.2.17",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.14",
+    "@types/node": "20.7.0",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.2.8",
+    "autoprefixer": "10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
-    "next": "13.4.12",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.3",
+    "next": "13.5.3",
     "next-themes": "^0.2.1",
-    "postcss": "8.4.27",
+    "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
-    "tailwindcss-animate": "^1.0.6",
-    "typescript": "5.1.6"
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "5.2.2"
   },
   "devDependencies": {
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.5.4"
   }
 }
