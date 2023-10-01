@@ -26,7 +26,7 @@ export default function Home() {
                 href="https://obedd.vercel.app"
                 target="_blank"
                 rel="noreferrer"
-                className="pb-1 text-zinc-800 dark:text-zinc-100 underline"
+                className="pb-1 text-zinc-800 dark:text-zinc-100 underline font-medium"
               >
                 Virgil.
               </a>{" "}

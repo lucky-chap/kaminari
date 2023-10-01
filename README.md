@@ -2,7 +2,7 @@
   <img src="public/og.png" alt="Next.js and TypeScript">
 </p>
 
-<p align="center">
+<p align="start">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
 
   <img alt="License" src="https://img.shields.io/github/license/chhpt/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
@@ -12,23 +12,25 @@
   </a>
 </p>
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flucky-chap%2Fkaminari&demo-title=Kaminari&demo-description=Next.js%2C%20TailwindCSS%20and%20shadcn-ui%20Starter%20Template&demo-url=https%3A%2F%2Fkaminari.vercel.app&demo-image=https%3A%2F%2Fkaminari.vercel.app%2Fog.png)
+
 <br>
 
-A Next.js starter that includes all you need to build amazing projects 🔥 Fork and customize from [lucky-chap](https://github.com/lucky-chap/kaminari)
+### A Next.js starter that includes all you need to build amazing projects 🔥 Fork and customize from [lucky-chap](https://github.com/lucky-chap/kaminari)
 
-- 🚀 **Next.js 13**
-- ⚙️ **Tailwind CSS 3** - A utility-first CSS framework
-- ⚙️ **shadcn-ui** - An awesome component library
-- 🍓 **TypeScript** - JavaScript superset
-- 📏 **ESLint** — Pluggable JavaScript linter
-- 💖 **Prettier** - Opinionated Code Formatter (coming soon)
-- 🐶 **Husky** — Use git hooks with ease (coming soon)
-- 🚫 **lint-staged** - Run linters against staged git files (coming soon)
-- 🚫 **commitlint** - Lint your commits and adhere to a commit convention (coming soon)
-- 🃏 **Jest** - The delightful JavaScript Testing Framework (coming soon)
-- 🗂 **Absolute import** - Import folders and files using the `@` prefix
+## Features 💅
 
-## 🚀 Getting started
+- **Next.js 13**
+- **Tailwind CSS 3** - A utility-first CSS framework
+- **shadcn-ui** - An awesome component library
+- **TypeScript** - JavaScript superset
+- **ESLint** — Pluggable JavaScript linter
+- **Prettier** - Opinionated
+- **Jest** - The delightful JavaScript Testing Framework (coming soon)
+- **Absolute import** - Import folders and files using the `@` prefix
+- **Qick deploy** - Quickly deploy with the `Vercel Deploy button below`
+
+## Getting started 🚀
 
 The best way to start with this template is using `create-next-app`.
 
@@ -43,11 +45,11 @@ If you prefer you can clone this repository and run the following commands insid
 
 To view the project open `http://localhost:3000`.
 
-## ✨ Star
+## Star ✨
 
 I want this project to go far. Please show your support by starring it. Thank you!
 
-## 🤝 Contributing
+## Contributing 🤝
 
 1. Fork this repository;
 2. Create your branch: `git checkout -b my-new-feature`;

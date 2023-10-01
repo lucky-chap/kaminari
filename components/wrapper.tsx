@@ -27,9 +27,12 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
     } else {
       setPreviousPage(`page-${Math.abs(currentIndex - activeSection?.label!)}`);
     }
-  }, []);
-
-  console.log(currentIndex);
+  }, [
+    activeSection?.isFirst,
+    activeSection?.isLast,
+    activeSection?.label,
+    currentIndex,
+  ]);
 
   return (
     <>
