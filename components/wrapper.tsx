@@ -45,7 +45,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
           <span
             className={`text-sm font-bold group ml-2 inline-block rounded-3xl bg-[#fafafa] px-3 text-black`}
           >
-            <span className="">v3</span>
+            <span className="">v3.2</span>
           </span>
         </Link>
 

@@ -28,7 +28,7 @@ export default function Home() {
                 rel="noreferrer"
                 className="pb-1 text-zinc-800 dark:text-zinc-100 underline font-medium"
               >
-                Virgil.
+                Virgil
               </a>{" "}
             </p>
 

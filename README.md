@@ -2,11 +2,17 @@
   <img src="public/og.png" alt="Next.js and TypeScript">
 </p>
 
-<p align="start">
+<p align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/github/license/chhpt/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
+</p>
 
+<p align="center">
+  <img alt="License" src="https://img.shields.io/github/license/chhpt/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
+  </a>
+</p>
+
+<p align="center">
   <a href="https://twitter.com/intent/follow?screen_name=hunchodotdev">
     <img src="https://img.shields.io/twitter/follow/hunchodotdev?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @hunchodotdev" />
   </a>
@@ -14,13 +20,11 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flucky-chap%2Fkaminari&demo-title=Kaminari&demo-description=Next.js%2C%20TailwindCSS%20and%20shadcn-ui%20Starter%20Template&demo-url=https%3A%2F%2Fkaminari.vercel.app&demo-image=https%3A%2F%2Fkaminari.vercel.app%2Fog.png)
 
-<br>
-
-### A Next.js starter that includes all you need to build amazing projects 🔥 Fork and customize from [lucky-chap](https://github.com/lucky-chap/kaminari)
+## No bullshit Next.js starter by [Virgil](https://github.com/lucky-chap/kaminari)
 
 ## Features 💅
 
-- **Next.js 13**
+- **Next.js 14** - Duh
 - **Tailwind CSS 3** - A utility-first CSS framework
 - **shadcn-ui** - An awesome component library
 - **TypeScript** - JavaScript superset
