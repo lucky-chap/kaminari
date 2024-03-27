@@ -50,7 +50,6 @@ jobs:
            --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
            --cache-to type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache,mode=max \
            --push
-          docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
