@@ -43,7 +43,7 @@ jobs:
         run: |
           docker buildx build --progress=plain \
            -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} .
-          docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/ima/app:${{ github.sha }}
+          docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
