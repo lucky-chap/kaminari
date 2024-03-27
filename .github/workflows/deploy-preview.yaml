@@ -47,7 +47,8 @@ jobs:
       - name: Build and Push Docker Image to Artifact Registry
         run: |
           docker buildx build --progress=plain  \
-           -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} .
+           -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} . \
+           --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache
           docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
 
       - name: Deploy to Cloud Run
