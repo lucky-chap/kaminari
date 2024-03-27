@@ -9,6 +9,7 @@ on:
     paths-ignore:
       - .git
       - .gitignore
+      - .github/CODEOWNERS
       - LICENSE
       - README.md
       - __tests__/**
