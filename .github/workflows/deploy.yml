@@ -42,6 +42,7 @@ jobs:
 
       - name: Build and Push Docker Image to Artifact Registry
         run: |
+          DOCKER_BUILDKIT=1
           docker buildx build --progress=plain \
            -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} . \
            --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
