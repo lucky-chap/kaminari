@@ -46,16 +46,16 @@ jobs:
       - name: Build and Push Docker Image to Artifact Registry
         run: |
           docker buildx build --progress=plain  \
-           -t asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} .
-          docker push asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }}
+           -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} .
+          docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
 
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy kaminari \
-            --image asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} \
+            --image asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} \
             --region asia-northeast1 \
             --tag ${{ steps.get_tag_name.outputs.cloudrun_compatible_tag }} \
-            --project ${{ var.gcp_project_id }} \
+            --project ${{ vars.gcp_project_id }} \
             --no-traffic
 
   # print-deployed-url:
