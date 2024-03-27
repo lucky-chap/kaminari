@@ -44,6 +44,9 @@ jobs:
           branch_name: ${{ github.head_ref }}
         id: get_tag_name
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build and Push Docker Image to Artifact Registry
         run: |
           docker buildx build --progress=plain  \
