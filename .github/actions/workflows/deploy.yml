@@ -1,0 +1,54 @@
+name: "deploy to CloudRun"
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .git
+      - .gitignore
+      - LICENSE
+      - README.md
+      - __tests__/**
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  id-token: write
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: google/cloud-sdk:latest
+    environment: kaminari-cloudrun
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.SERVICE_ACCOUNT }}
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
+
+      - name: Build and Push Docker Image to Artifact Registry
+        run: |
+          docker buildx build --progress=plain \
+           -t asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} .
+          docker push asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/ima/app:${{ github.sha }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy kaminari \
+            --image asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} \
+            --region asia-northeast1 \
+            --project ${{ var.gcp_project_id }} && \
+          gcloud run services update-traffic kaminari --region asia-northeast1 --to-latest

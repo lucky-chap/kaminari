@@ -1,0 +1,22 @@
+name: branch name → cloud run-compatible tag
+
+inputs:
+  branch_name:
+    description: "The branch name to convert to a Cloud Run-compatible tag."
+    required: true
+
+outputs:
+  cloudrun_compatible_tag:
+    description: "The branch name converted to a Cloud Run-compatible tag."
+    value: ${{ steps.transform-string.outputs.cloudrun-compatible-tag }}
+
+runs:
+  using: composite
+  steps:
+    # Resource name must use only lowercase letters, numbers and '-'.
+    # Must begin with a letter and cannot end with a '-'.
+    # Maximum length is 63 characters.
+    - name: Transform string
+      id: transform-string
+      run: echo "cloudrun-compatible-tag=${{ inputs.branch_name }}" | tr "[:upper:]/_" "[:lower:]-" >> $GITHUB_OUTPUT
+      shell: bash

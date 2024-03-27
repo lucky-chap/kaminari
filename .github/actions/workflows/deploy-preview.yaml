@@ -1,0 +1,103 @@
+name: "deploy CloudRun preview"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    paths-ignore:
+      - .git
+      - .gitignore
+      - LICENSE
+      - README.md
+      - __tests__/**
+
+permissions:
+  contents: read
+  id-token: write
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: google/cloud-sdk:latest
+    environment: kaminari-cloudrun
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.SERVICE_ACCOUNT }}
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
+
+      - name: Get tag name
+        uses: ./.github/actions/branch-name-to-cloudrun-tag
+        with:
+          branch_name: ${{ github.head_ref }}
+        id: get_tag_name
+
+      - name: Build and Push Docker Image to Artifact Registry
+        run: |
+          docker buildx build --progress=plain  \
+           -t asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} .
+          docker push asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy kaminari \
+            --image asia-northeast1-docker.pkg.dev/${{ var.gcp_project_id }}/kaminari/app:${{ github.sha }} \
+            --region asia-northeast1 \
+            --tag ${{ steps.get_tag_name.outputs.cloudrun_compatible_tag }} \
+            --project ${{ var.gcp_project_id }} \
+            --no-traffic
+
+  # print-deployed-url:
+  #   needs: [deploy]
+  #   runs-on: ubuntu-latest
+  #   environment: kaminari-cloudrun
+
+  #   steps:
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v4
+
+  #     - name: Get github access token
+  #       id: get_access_token
+  #       uses: actions/create-github-app-token@v1
+  #       with:
+  #         app-id: ${{ secrets.GITHUB_APP_ID }}
+  #         private-key: ${{ secrets.GITHUB_APP_PRIVATE_KEY }}
+  #         owner: ${{ github.repository_owner }}
+
+  #     - name: Get tag name
+  #       uses: ./.github/actions/branch-name-to-cloudrun-tag
+  #       with:
+  #         branch_name: ${{ github.head_ref }}
+  #       id: get_tag_name
+
+  #     - name: Check if pull request exists for this commit
+  #       id: check_pr_exists
+  #       run: |
+  #         pr_number=$(gh pr list --json headRefOid,number --state open | jq -r '.[] | select(.headRefOid == "'${{ github.event.pull_request.head.sha }}'") | .number')
+  #         echo "pr_number=${pr_number}" >> $GITHUB_OUTPUT
+  #       env:
+  #         GH_TOKEN: ${{ steps.get_access_token.outputs.token }}
+
+  #     - name: Comment URL to PR
+  #       if: steps.check_pr_exists.outputs.pr_number != ''
+  #       uses: actions/github-script@v7
+  #       with:
+  #         github-token: ${{ steps.get_access_token.outputs.token }}
+  #         script: |
+  #           github.rest.issues.createComment({
+  #             issue_number:  ${{steps.check_pr_exists.outputs.pr_number}},
+  #             owner: context.repo.owner,
+  #             repo: context.repo.repo,
+  #             body: '${{ github.event.pull_request.head.sha }} deployed at https://${{ steps.get_tag_name.outputs.cloudrun_compatible_tag }}-kaminari.dev.tkosushi.com :rocket:'
+  #           })
