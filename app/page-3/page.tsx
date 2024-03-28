@@ -18,7 +18,7 @@ export default function Home() {
               03
             </span>
             <p className="pb-6 font-medium">
-              Let's explore the software development world together with Github Copilot.
+              Let\'s explore the software development world together with Github Copilot.
               Happy coding!🚀
             </p>
 
