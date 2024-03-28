@@ -18,10 +18,8 @@ export default function Home() {
               03
             </span>
             <p className="pb-6 font-medium">
-              The computer mouse was invented by Douglas Engelbart in 1964. He
-              demonstrated the mouse along with many other groundbreaking
-              technologies in a famous presentation known as &apos;The Mother of
-              All Demos&apos;
+              Let's explore the software development world together with Github Copilot.
+              Happy coding!🚀
             </p>
 
             <div className="">
