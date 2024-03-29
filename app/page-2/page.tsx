@@ -18,11 +18,9 @@ export default function Home() {
               02
             </span>
             <p className="pb-6 font-medium">
-              Ada Lovelace, an English mathematician and writer, is considered
-              the world&apos;s first computer programmer. She wrote the
-              world&apos;s first algorithm to be processed by a machine,
-              specifically for Charles Babbage&apos;s Analytical Engine, which
-              is considered the first general-purpose computer
+              Copilot is a great tool for generating code snippets.
+              It can help you write code faster and more efficiently.
+              It can also help you learn new programming languages and frameworks.
             </p>
 
             <div className="">
