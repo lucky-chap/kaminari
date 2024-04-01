@@ -53,8 +53,14 @@ jobs:
 
       - name: Deploy to Cloud Run
         run: |
+          rollbackTargetRevision=$(gcloud run services describe kaminari \
+                                    --region=asia-northeast1 \
+                                    --project="${{ vars.gcp_project_id }}" \
+                                    --format=json | jq -r '.status.traffic[] | select(.percent == 100) | .revisionName')
+
           gcloud run deploy kaminari \
             --image asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} \
             --region asia-northeast1 \
-            --project ${{ vars.gcp_project_id }} && \
+            --project ${{ vars.gcp_project_id }} \
+            --update-labels= rollback-target-revision=$rollbackTargetRevision && \
           gcloud run services update-traffic kaminari --region asia-northeast1 --to-latest
