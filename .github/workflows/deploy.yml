@@ -55,7 +55,7 @@ jobs:
         run: |
           rollbackTargetRevision=$(gcloud run services describe kaminari \
                                     --region=asia-northeast1 \
-                                    --project="${{ inputs.project }}" \
+                                    --project="${{ vars.gcp_project_id }}" \
                                     --format=json | jq -r '.status.traffic[] | select(.percent == 100) | .revisionName')
 
           gcloud run deploy kaminari \
