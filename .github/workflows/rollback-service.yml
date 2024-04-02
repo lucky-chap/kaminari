@@ -45,9 +45,9 @@ jobs:
           rollbackTargetRevision=$(gcloud run revisions describe "${currentRevision}" \
                                      --region=asia-northeast1 \
                                      --project="${{ vars.GCP_PROJECT_ID }}" \
-                                     --format=json | jq -r '.metadata.labels["rollback-target-revisioni-cloudrun"]')
+                                     --format=json | jq -r '.metadata.labels["rollback-target-revision"]')
 
-          if [[ -z "${rollbackTargetRevision}" ]]; then
+          if [[ -z "${rollbackTargetRevision}" ]] || [[ "${rollbackTargetRevision}" == "null" ]]; then
             echo ":warning: failed to rollback due to missing labels \"rollback-target-revisioni-cloudrun\"" >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
