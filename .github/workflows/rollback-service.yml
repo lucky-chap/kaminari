@@ -22,6 +22,7 @@ run-name: Rollback kaminari service in ${{ inputs.env }} by @${{ github.actor }}
 jobs:
   rollback-service:
     runs-on: ubuntu-latest
+    environment: kaminari-cloudrun
 
     steps:
       - name: Authenticate to Google Cloud
