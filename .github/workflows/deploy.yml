@@ -64,8 +64,9 @@ jobs:
       - name: Copy .next/cache folder from image
         run: |
           docker create --name tmp-app asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
-          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next/
+          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next/cache
           docker rm tmp-app
+          ls -a ${{ github.workspace }}/.next/cache
 
       - name: Deploy to Cloud Run
         run: |
