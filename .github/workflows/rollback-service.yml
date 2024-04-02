@@ -55,6 +55,6 @@ jobs:
           gcloud run services update-traffic "kaminari" \
             --to-revisions="${rollbackTargetRevision}=100" \
             --region=asia-northeast1 \
-            --project="${{ vars.PROJECT }}"
+            --project="${{ vars.GCP_PROJECT_ID }}"
 
             echo ":white_check_mark: finished rollback to the previous revision: ${rollbackTargetRevision}" >> "$GITHUB_STEP_SUMMARY"
