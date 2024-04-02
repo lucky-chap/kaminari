@@ -61,6 +61,9 @@ jobs:
            --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
            --push
 
+      - name: tmp
+        run: ls -a ${{ github.workspace }}/
+
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy kaminari \
