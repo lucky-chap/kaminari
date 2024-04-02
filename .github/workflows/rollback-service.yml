@@ -1,0 +1,60 @@
+name: rollback service
+
+on:
+  workflow_dispatch:
+   inputs:
+      env:
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: rollback-service
+
+run-name: Rollback kaminari service in ${{ inputs.env }} by @${{ github.actor }}
+
+jobs:
+  rollback-service:
+    runs-on: ubuntu-latest
+    needs: [ setup-environment ]
+
+    steps:
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.SERVICE_ACCOUNT }}
+
+      - name: Set up jq
+        run: |
+          apt-get install -y jq
+
+      - name: Rollback
+        run: |
+          currentRevision=$(gcloud run services describe "kaminari" \
+                              --region=asia-northeast1 \
+                              --project="${{ vars.PROJECT }}" \
+                              --format=json | jq -r '.status.traffic[] | select(.percent == 100) | .revisionName')
+
+          rollbackTargetRevision=$(gcloud run revisions describe "${currentRevision}" \
+                                     --region=asia-northeast1 \
+                                     --project="${{ vars.PROJECT }}" \
+                                     --format=json | jq -r '.metadata.labels["rollback-target-revisioni-cloudrun"]')
+
+          if [[ -z "${rollbackTargetRevision}" ]]; then
+            echo ":warning: failed to rollback due to missing labels \"rollback-target-revisioni-cloudrun\"" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          gcloud run services update-traffic "kaminari" \
+            --to-revisions="${rollbackTargetRevision}=100" \
+            --region=asia-northeast1 \
+            --project="${{ vars.PROJECT }}"
+
+            echo ":white_check_mark: finished rollback to the previous revision: ${rollbackTargetRevision}" >> "$GITHUB_STEP_SUMMARY"
