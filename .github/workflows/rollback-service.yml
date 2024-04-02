@@ -35,10 +35,6 @@ jobs:
           workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ vars.SERVICE_ACCOUNT }}
 
-      - name: Set up jq
-        run: |
-          apt-get install -y jq
-
       - name: Rollback
         run: |
           currentRevision=$(gcloud run services describe "kaminari" \
