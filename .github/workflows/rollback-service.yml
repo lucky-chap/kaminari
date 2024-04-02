@@ -44,12 +44,12 @@ jobs:
         run: |
           currentRevision=$(gcloud run services describe "kaminari" \
                               --region=asia-northeast1 \
-                              --project="${{ vars.PROJECT }}" \
+                              --project="${{ vars.GCP_PROJECT_ID }}" \
                               --format=json | jq -r '.status.traffic[] | select(.percent == 100) | .revisionName')
 
           rollbackTargetRevision=$(gcloud run revisions describe "${currentRevision}" \
                                      --region=asia-northeast1 \
-                                     --project="${{ vars.PROJECT }}" \
+                                     --project="${{ vars.GCP_PROJECT_ID }}" \
                                      --format=json | jq -r '.metadata.labels["rollback-target-revisioni-cloudrun"]')
 
           if [[ -z "${rollbackTargetRevision}" ]]; then
