@@ -32,7 +32,7 @@
 - **Prettier** - Opinionated
 - **Jest** - The delightful JavaScript Testing Framework (coming soon)
 - **Absolute import** - Import folders and files using the `@` prefix
-- **Qick deploy** - Quickly deploy with the `Vercel Deploy button below`
+- **Quick deploy** - Quickly deploy with the `Vercel Deploy button below`
 
 ## Getting started 🚀
 
