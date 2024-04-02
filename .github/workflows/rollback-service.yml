@@ -53,7 +53,7 @@ jobs:
           fi
 
           gcloud run services update-traffic "kaminari" \
-            --to-revisions="${rollbackTargetRevision}=100" \
+            --to-revisions="$rollbackTargetRevision"=100 \
             --region=asia-northeast1 \
             --project="${{ vars.GCP_PROJECT_ID }}"
 
