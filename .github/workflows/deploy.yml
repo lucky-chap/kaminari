@@ -24,7 +24,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: google/cloud-sdk:latest
     environment: kaminari-cloudrun
 
     steps:
@@ -36,10 +35,6 @@ jobs:
         with:
           workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ vars.SERVICE_ACCOUNT }}
-
-      - name: Set up jq
-        run: |
-          apt-get install -y jq
 
       - name: Configure Docker
         run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
