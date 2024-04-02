@@ -61,6 +61,12 @@ jobs:
            --cache-to type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache,mode=max \
            --push
 
+      - name: Copy .next/cache folder from image
+        run: |
+          docker create --name tmp-app asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
+          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/
+          docker rm tmp-app
+
       - name: Deploy to Cloud Run
         run: |
           rollbackTargetRevision=$(gcloud run services describe kaminari \
