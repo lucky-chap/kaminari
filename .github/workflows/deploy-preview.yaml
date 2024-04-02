@@ -22,7 +22,6 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: google/cloud-sdk:latest
     environment: kaminari-cloudrun
 
     steps:
@@ -43,9 +42,6 @@ jobs:
         with:
           branch_name: ${{ github.head_ref }}
         id: get_tag_name
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 
       - name: Build and Push Docker Image to Artifact Registry
         run: |
