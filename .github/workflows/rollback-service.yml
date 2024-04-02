@@ -17,6 +17,10 @@ defaults:
 concurrency:
   group: rollback-service
 
+permissions:
+  contents: read
+  id-token: write
+
 run-name: Rollback kaminari service in ${{ inputs.env }} by @${{ github.actor }}
 
 jobs:
