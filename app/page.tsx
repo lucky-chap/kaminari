@@ -18,7 +18,7 @@ export default function Home() {
               01
             </span>
             <p className="pb-6 font-medium">
-              hoge
+              This is a simple pagination boilerplate for Next.js
             </p>
 
             <div className="">
