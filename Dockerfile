@@ -47,9 +47,6 @@ WORKDIR /app/$APP_NAME
 COPY --from=builder --chown=nextjs:nodejs /app/$APP_NAME/.next/static ./.next/static
 COPY --from=builder /app/$APP_NAME/public ./public
 
-# Copy .next/cache from builder to use cache on CI
-COPY --from=builder /app/$APP_NAME/.next/cache ./.next/cache
-
 USER nextjs
 
 EXPOSE 3000
