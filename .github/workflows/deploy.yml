@@ -65,7 +65,7 @@ jobs:
         run: |
           docker create --name tmp-app app:builder
           mkdir -p ${{ github.workspace }}/.next
-          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next/cache
+          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next
           docker rm tmp-app
 
       - name: tmp
