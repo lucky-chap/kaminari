@@ -56,7 +56,7 @@ jobs:
       - name: Build Docker Image to the builder stage
         run: |
           docker buildx build --target builder --progress=plain \
-           -t app:builder . \
+           --load -t app:builder . \
            --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
 
       - name: Build and Push Docker Image to Artifact Registry
