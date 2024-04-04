@@ -53,6 +53,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
+      - name: Build Docker Image to the builder stage
+        run: |
+          docker buildx build --target builder --progress=plain \
+           -t app:builder . \
+           --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
+
       - name: Build and Push Docker Image to Artifact Registry
         run: |
           docker buildx build --progress=plain \
@@ -63,11 +69,9 @@ jobs:
 
       - name: Copy .next/cache folder from image
         run: |
-          docker create --name tmp-app asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
-          mkdir -p ${{ github.workspace }}/.next/cache
+          docker create --name tmp-app app:builder
           docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next/cache
           docker rm tmp-app
-          ls -a ${{ github.workspace }}/.next/cache
 
       - name: Deploy to Cloud Run
         run: |
