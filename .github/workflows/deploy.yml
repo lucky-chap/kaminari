@@ -39,9 +39,6 @@ jobs:
       - name: Configure Docker
         run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Restoring and saving next build cache
         uses: actions/cache@v4
         with:
@@ -56,22 +53,24 @@ jobs:
       - name: Build Docker Image to the builder stage
         run: |
           docker buildx build --target builder --progress=plain \
-           --load -t app:builder . \
-           --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
+           -t app:builder .
 
       - name: Build and Push Docker Image to Artifact Registry
         run: |
           docker buildx build --progress=plain \
            -t asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }} . \
-           --cache-from type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache \
-           --cache-to type=registry,ref=asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:cache,mode=max \
-           --push
+          docker push asia-northeast1-docker.pkg.dev/${{ vars.gcp_project_id }}/kaminari/app:${{ github.sha }}
 
       - name: Copy .next/cache folder from image
         run: |
           docker create --name tmp-app app:builder
-          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next/cache
+          mkdir -p ${{ github.workspace }}/.next
+          docker cp tmp-app:/app/kaminari/.next/cache ${{ github.workspace }}/.next
           docker rm tmp-app
+
+      - name: tmp
+        run: |
+          ls -a ${{ github.workspace }}/.next/cache
 
       - name: Deploy to Cloud Run
         run: |
