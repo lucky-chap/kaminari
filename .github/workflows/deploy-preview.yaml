@@ -38,9 +38,9 @@ jobs:
         run: gcloud auth configure-docker asia-northeast1-docker.pkg.dev
 
       - name: Get tag name
-        uses: ./.github/actions/branch-name-to-cloudrun-tag
+        uses: ./.github/actions/pr-number-to-cloudrun-tag
         with:
-          branch_name: ${{ github.head_ref }}
+          pr_number: ${{ github.ref_name }}
         id: get_tag_name
 
       - name: Restoring next build cache
@@ -91,9 +91,9 @@ jobs:
   #         owner: ${{ github.repository_owner }}
 
   #     - name: Get tag name
-  #       uses: ./.github/actions/branch-name-to-cloudrun-tag
+  #       uses: ./.github/actions/pr-number-to-cloudrun-tag
   #       with:
-  #         branch_name: ${{ github.head_ref }}
+  #         pr_number: ${{ github.ref_name }}
   #       id: get_tag_name
 
   #     - name: Check if pull request exists for this commit
