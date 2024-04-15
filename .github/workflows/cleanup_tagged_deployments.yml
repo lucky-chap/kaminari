@@ -19,6 +19,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: tmp
+        run: echo ${{ github }}
+
       - name: Get tag name
         uses: ./.github/actions/pr-number-to-cloudrun-tag
         with:
@@ -33,6 +36,6 @@ jobs:
 
       - name: Remove tag
         run: |
-          gcloud run services update-traffic ima \
+          gcloud run services update-traffic kaminari \
             --region asia-northeast1 \
             --remove-tags ${{ steps.get_tag_name.outputs.cloudrun_compatible_tag }}
