@@ -1,13 +1,13 @@
-name: branch name → cloud run-compatible tag
+name: pr_number → cloud run-compatible tag
 
 inputs:
-  branch_name:
-    description: "The branch name to convert to a Cloud Run-compatible tag."
+  pr_number:
+    description: "Convert the format '<pr_number>/merge' to a CloudRun-compatible tag.(e.g. 123/merge -> pr123)"
     required: true
 
 outputs:
   cloudrun_compatible_tag:
-    description: "The branch name converted to a Cloud Run-compatible tag."
+    description: "The pull request number converted to a Cloud Run-compatible tag."
     value: ${{ steps.transform-string.outputs.cloudrun-compatible-tag }}
 
 runs:
@@ -18,5 +18,5 @@ runs:
     # Maximum length is 63 characters.
     - name: Transform string
       id: transform-string
-      run: echo "cloudrun-compatible-tag=${{ inputs.branch_name }}" | tr "[:upper:]/_" "[:lower:]-" >> $GITHUB_OUTPUT
+      run: echo "cloudrun-compatible-tag=pr$(echo ${{ inputs.pr_number }} | sed 's|/merge||')" >> $GITHUB_OUTPUT
       shell: bash

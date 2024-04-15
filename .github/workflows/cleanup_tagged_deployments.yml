@@ -1,0 +1,39 @@
+name: cleanup tagged deployment
+
+on:
+  delete:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  cleanup:
+    if: github.event.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    container: google/cloud-sdk:latest
+    environment: ima-dev
+
+    steps:
+      # we don't need the code but the gcloud auth action requires a checkout:
+      # https://github.com/google-github-actions/auth#inputs-miscellaneous
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Get tag name
+        uses: ./.github/actions/pr-number-to-cloudrun-tag
+        with:
+          pr_number: ${{ github.ref_name }}
+        id: get_tag_name
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.SERVICE_ACCOUNT }}
+
+      - name: Remove tag
+        run: |
+          gcloud run services update-traffic ima \
+            --region asia-northeast1 \
+            --remove-tags ${{ steps.get_tag_name.outputs.cloudrun_compatible_tag }}
