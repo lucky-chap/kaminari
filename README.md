@@ -24,7 +24,7 @@
 
 ## Features 💅
 
-- **Next.js 14** - Duh
+- **Next.js 14** - Why not?
 - **Tailwind CSS 3** - A utility-first CSS framework
 - **shadcn-ui** - An awesome component library
 - **TypeScript** - JavaScript superset
@@ -68,7 +68,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ♥ by [Virgil](https://twitter.com/hunchodotdev)
+Made with ♥ by [TheAscendant](https://twitter.com/hunchodotdev)
 
 ## 🔗 Important Links
 
