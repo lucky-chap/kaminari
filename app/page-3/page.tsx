@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Wrapper from "@/components/wrapper";
-import { Button } from "@/components/ui/button";
-
 import boyAndGirl from "@/public/images/boy-and-girl.png";
+
+import { Button } from "@/components/ui/button";
+import Wrapper from "@/components/wrapper";
 
 export default function Home() {
   return (
@@ -18,10 +18,10 @@ export default function Home() {
               03
             </span>
             <p className="pb-6 font-medium">
-              The computer mouse was invented by Douglas Engelbart in 1964. He
-              demonstrated the mouse along with many other groundbreaking
-              technologies in a famous presentation known as &apos;The Mother of
-              All Demos&apos;
+              The Dark Mode Debate: Programmers swear by dark mode, claiming it
+              saves battery, looks cooler, and prevents “getting hacked by eye
+              strain.” The rest of the world is just confused. (All light mode
+              users are sinners)
             </p>
 
             <div className="">
@@ -30,7 +30,7 @@ export default function Home() {
                   href="https://github.com/lucky-chap/kaminari"
                   target="_blank"
                   rel="noreferrer"
-                  className="pb-1 dark:text-zinc-800 text-zinc-100"
+                  className="pb-1 text-zinc-100 dark:text-zinc-800"
                 >
                   Repo
                 </a>{" "}
@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* second half */}
 
-      <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#ffefd6] p-9">
+      <section className="hidden h-screen w-full flex-col items-center justify-center bg-[#ffefd6] p-9 lg:flex">
         <Image src={boyAndGirl} alt="Boy and girl playing with robot" />
       </section>
     </section>

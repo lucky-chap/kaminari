@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Wrapper from "@/components/wrapper";
-import { Button } from "@/components/ui/button";
-
 import manWIthRobot from "@/public/images/man-with-robot.png";
+
+import { Button } from "@/components/ui/button";
+import Wrapper from "@/components/wrapper";
 
 export default function Home() {
   return (
@@ -18,11 +18,11 @@ export default function Home() {
               02
             </span>
             <p className="pb-6 font-medium">
-              Ada Lovelace, an English mathematician and writer, is considered
-              the world&apos;s first computer programmer. She wrote the
-              world&apos;s first algorithm to be processed by a machine,
-              specifically for Charles Babbage&apos;s Analytical Engine, which
-              is considered the first general-purpose computer
+              Copy-Pasting: The Real MVP: Don&apos;t let anyone fool you.
+              Programmers would be lost without Ctrl+C and Ctrl+V. Entire
+              careers have been built on the power of Stack Overflow and
+              copy-pasting code snippets! (Don&apos;t pretend you are not one of
+              them)
             </p>
 
             <div className="">
@@ -31,7 +31,7 @@ export default function Home() {
                   href="https://github.com/lucky-chap/kaminari"
                   target="_blank"
                   rel="noreferrer"
-                  className="pb-1 dark:text-zinc-800 text-zinc-100"
+                  className="pb-1 text-zinc-100 dark:text-zinc-800"
                 >
                   Repo
                 </a>{" "}
@@ -43,7 +43,7 @@ export default function Home() {
 
       {/* second half */}
 
-      <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#e0f5ff] p-9">
+      <section className="hidden h-screen w-full flex-col items-center justify-center bg-[#e0f5ff] p-9 lg:flex">
         <Image src={manWIthRobot} alt="Man sitting in wheelchair" />
       </section>
     </section>

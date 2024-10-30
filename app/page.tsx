@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Wrapper from "@/components/wrapper";
-import { Button } from "@/components/ui/button";
-
 import robot from "@/public/images/robot.png";
+
+import { Button } from "@/components/ui/button";
+import Wrapper from "@/components/wrapper";
 
 export default function Home() {
   return (
     <section className="flex flex-col lg:flex-row">
-      <section className="flex h-screen w-full flex-col justify-between p-9 lg:h-auto">
+      <section className="bale flex h-screen w-full flex-col justify-between p-9 lg:h-auto">
         <Wrapper>
           <div className="mx-auto flex max-w-sm flex-col justify-between">
             <span
@@ -18,18 +18,9 @@ export default function Home() {
               01
             </span>
             <p className="pb-6 font-medium">
-              Kami (short for Kaminari) is a modern Next.js, Tailwind CSS and
-              shadcn-ui boilerplate that includes all you need to build amazing
-              projects. No need to spend time on configuring the basic needs of
-              a project. I did that for you - Created by{" "}
-              <a
-                href="https://obedd.vercel.app"
-                target="_blank"
-                rel="noreferrer"
-                className="pb-1 text-zinc-800 dark:text-zinc-100 underline font-medium"
-              >
-                Virgil
-              </a>{" "}
+              Think of Kaminari as that friend who shows up with snacks and
+              already picked the movie, so all you have to do is sit back and
+              enjoy the show. I handled all the basic configs for you. Enjoy.
             </p>
 
             <div className="">
@@ -38,7 +29,7 @@ export default function Home() {
                   href="https://github.com/lucky-chap/kaminari"
                   target="_blank"
                   rel="noreferrer"
-                  className="pb-1 dark:text-zinc-800 text-zinc-100"
+                  className="pb-1 text-zinc-100 dark:text-zinc-800"
                 >
                   Repo
                 </a>{" "}
@@ -50,7 +41,7 @@ export default function Home() {
 
       {/* second half */}
 
-      <section className="hidden lg:flex h-screen w-full flex-col justify-center items-center bg-[#d6ebe9] p-9">
+      <section className="hidden h-screen w-full flex-col items-center justify-center bg-[#d6ebe9] p-9 lg:flex">
         <Image src={robot} alt="Man sitting in wheelchair" />
       </section>
     </section>

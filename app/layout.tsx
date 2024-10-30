@@ -1,8 +1,9 @@
 import "./globals.css";
-import type { Metadata } from "next";
-import { Provider } from "@/components/provider";
 
+import type { Metadata } from "next";
 import localFont from "next/font/local";
+
+import { Provider } from "@/components/provider";
 
 const spaceMono = localFont({
   src: [
@@ -84,11 +85,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${spaceMono.className}`}>
         <Provider attribute="class" defaultTheme="system" enableSystem>
           <main
-            className={`text-zinc-700 bg-white dark:text-zinc-400 dark:bg-black`}
+            className={`bg-white text-zinc-700 dark:bg-black dark:text-zinc-400`}
           >
             {children}
           </main>
