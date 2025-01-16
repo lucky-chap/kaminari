@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation'
 import ThemeToggle from "./theme-toggle";
 import { Button } from "./ui/button";
 import Link from "next/link";
