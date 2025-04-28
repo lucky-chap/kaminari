@@ -10,7 +10,7 @@ describe("Home", () => {
     render(<Home />);
 
     const text = screen.getByText(
-      /The computer mouse was invented by Douglas Engelbart in 1964/i,
+      /The rest of the world is just confused./i,
     );
 
     expect(text).toBeInTheDocument();

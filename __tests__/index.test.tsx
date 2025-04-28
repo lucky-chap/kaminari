@@ -11,7 +11,7 @@ describe("Home", () => {
     render(<Home />);
 
     const text = screen.getByText(
-      /a modern Next.js, Tailwind CSS and shadcn-ui boilerplate that includes all you need to build amazing projects/i,
+      /Think of Kaminari as that friend who shows up with snacks and already picked the movie/i,
     );
 
     expect(text).toBeInTheDocument();

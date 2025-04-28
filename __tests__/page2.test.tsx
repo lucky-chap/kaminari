@@ -10,7 +10,7 @@ describe("Home", () => {
     render(<Home />);
 
     const text = screen.getByText(
-      /Ada Lovelace, an English mathematician and writer, is considered the world's first computer programmer/i,
+      /Entire careers have been built on the power of Stack Overflow and copy-pasting code snippets!/i,
     );
 
     expect(text).toBeInTheDocument();

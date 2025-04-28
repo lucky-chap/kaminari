@@ -20,7 +20,7 @@ export default function Home() {
             <p className="pb-6 font-medium">
               Think of Kaminari as that friend who shows up with snacks and
               already picked the movie, so all you have to do is sit back and
-              enjoy the show. I handled all the basic configs for you. Enjoy.
+              enjoy the show. I handled all the basic configs for you. Enjoy!
             </p>
 
             <div className="">

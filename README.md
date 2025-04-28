@@ -24,7 +24,7 @@
 
 ## Features 💅
 
-- **Next.js 15** - Why not?
+- **Next.js 15.x.x** - Why not?
 - **Tailwind CSS 3** - A utility-first CSS framework
 - **shadcn-ui** - An awesome component library
 - **TypeScript** - JavaScript superset
