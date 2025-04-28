@@ -10,12 +10,11 @@ export default function ThemeToggle() {
   return (
     <div className="flex border items-center bg-[#fafafa] shado dark:bg-[#111] dark:border-zinc-800 p-2 px-4 w- justify-between rounded-full">
       <button
-        // className={`mr-2 p-1 dark:text-zinc-500 text-zinc-700 ${
-        //   theme === "system"
-        //     ? "bg-white dark:bg-[#333] text-zinc-50 rounded-full shadow-xl"
-        //     : ""
-        // }`}
-        className={cn("mr-2 p-1 dark:text-zinc-500 text-zinc-700", theme === "system" ? "bg-white dark:bg-[#333] text-zinc-50 rounded-full shadow-xl" : "")}
+        className={`mr-2 p-1 dark:text-zinc-500 text-zinc-700 ${theme === "system"
+            ? "bg-white dark:bg-[#333] text-zinc-50 rounded-full shadow-xl"
+            : ""
+          }`}
+        // className={cn("mr-2 p-1 dark:text-zinc-500 text-zinc-700", theme === "system" ? "bg-white dark:bg-[#333] text-zinc-50 rounded-full shadow-xl" : "")}
         onClick={() => setTheme("system")}
       >
         <Icons.monitor classes="" />
