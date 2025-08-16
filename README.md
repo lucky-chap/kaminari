@@ -20,12 +20,12 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Flucky-chap%2Fkaminari&demo-title=Kaminari&demo-description=Next.js%2C%20TailwindCSS%20and%20shadcn-ui%20Starter%20Template&demo-url=https%3A%2F%2Fkaminari.vercel.app&demo-image=https%3A%2F%2Fkaminari.vercel.app%2Fog.png)
 
-## No bullshit Next.js starter by [Huncho](https://github.com/lucky-chap)
+## No bullshit Next.js starter by [Huncho](https://github.com/lucky-chap) (Version 4 coming soon 🔥)
 
 ## Features 💅
 
 - **Next.js 15.x.x** - Why not?
-- **Tailwind CSS 3** - A utility-first CSS framework
+- **Tailwind CSS 4** - A utility-first CSS framework
 - **shadcn-ui** - An awesome component library
 - **TypeScript** - JavaScript superset
 - **ESLint** — Pluggable JavaScript linter
