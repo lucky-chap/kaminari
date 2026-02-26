@@ -23,18 +23,21 @@ export default function Home() {
               enjoy the show. I handled all the basic configs for you. Enjoy!
             </p>
 
-            <div className="">
-              <Button size="xl" className="w-full font-bold" variant="brand">
-                <a
-                  href="https://github.com/lucky-chap/kaminari"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="pb-1 text-zinc-100 dark:text-zinc-800"
-                >
-                  Repo
-                </a>{" "}
-              </Button>
-            </div>
+            <Button
+              size="xl"
+              className="w-full font-bold"
+              variant="brand"
+              asChild
+            >
+              <a
+                href="https://github.com/lucky-chap/kaminari"
+                target="_blank"
+                rel="noreferrer"
+                className="text-zinc-100 dark:text-zinc-800"
+              >
+                Repo
+              </a>
+            </Button>
           </div>
         </Wrapper>
       </section>
